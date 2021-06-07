@@ -48,50 +48,52 @@ public
 	end SmartHome.with_devices;
 	
 	process Controller
-		features
-			motion_in: in event port;
-			gate_in: in event port;
-			awake_in: in event port;
-			camera_out: out event port;
-			light_out: out event port;
-			gate_out: out event port;
-			coffee_out: out event port;
-			heat_out: out event port;
-			music_out: out event port;
-			alarm_out: out event port;
-			video_from_camera: in data port;
-			video_out: out data port;
-			
-	end Controller;
+	features
+		video_from_camera: in data port;
+
+		video_out: out data port;
+
+		motion_in: in event port;
+		gate_in: in event port;
+		awake_in: in event port;
+		camera_out: out event port;
+		light_out: out event port;
+		gate_out: out event port;
+		coffee_out: out event port;
+		heat_out: out event port;
+		music_out: out event port;
+		alarm_out: out event port;
+
+end Controller;
 	
 	process implementation Controller.with_threads
-		subcomponents
-			the_thread_motion:thread ReadMotion.impl;
-			the_thread_gate:thread GateMotion.impl;
-			the_thread_control:thread ControlRules.impl;
-			the_thread_gate_rules: thread GateRules.impl;
-			the_thread_awake: thread AwakeMotion.impl;
-			the_thread_awake_rules: thread AwakeRules.impl;
-			the_thread_video:thread ProcessVideo.impl;
-		connections
-			motion_thread_conn:port motion_in->the_thread_motion.motion_in;
-			motion_control_conn:port the_thread_motion.motion_out->the_thread_control.motion_in;
-			gate_thread_conn:port gate_in->the_thread_gate.motion_in;
-			car_rules_conn:port the_thread_gate.motion_out->the_thread_gate_rules.motion_in;
-			awake_thread_conn:port awake_in->the_thread_awake.motion_in;
-			awake_rules_conn:port the_thread_awake.motion_out->the_thread_awake_rules.motion_in;
-			camera_control_conn:port the_thread_control.camera_out ->camera_out;
-			light_control_conn:port the_thread_control.light_out ->light_out;
-			gate_control_conn:port the_thread_gate_rules.gate_out -> gate_out;
-			coffee_control_conn:port the_thread_awake_rules.coffee_out -> coffee_out;
-			heat_control_conn:port the_thread_control.heat_out ->heat_out;
-			music_control_conn:port the_thread_control.music_out ->music_out;
-			alarm_control_conn:port the_thread_control.alarm_out ->alarm_out;
-			video_conn:port video_from_camera->the_thread_video.video_in;
-			video_transfer:port the_thread_video.video_out->video_out;
-			
-		
-	end Controller.with_threads;
+	subcomponents
+		the_thread_motion: thread ReadMotion.impl;
+
+		the_thread_control: thread ControlRules.impl;
+
+		the_thread_awake: thread AwakeMotion.impl;
+		the_thread_awake_rules: thread AwakeRules.impl;
+		the_thread_video: thread ProcessVideo.impl;
+	connections
+		motion_thread_conn: port motion_in -> the_thread_motion.motion_in;
+		motion_control_conn: port the_thread_motion.motion_out -> the_thread_control.motion_in;
+		awake_thread_conn: port awake_in -> the_thread_awake.motion_in;
+		awake_rules_conn: port the_thread_awake.motion_out -> the_thread_awake_rules.motion_in;
+		camera_control_conn: port the_thread_control.camera_out -> camera_out;
+		light_control_conn: port the_thread_control.light_out -> light_out;
+		coffee_control_conn: port the_thread_awake_rules.coffee_out -> coffee_out;
+		heat_control_conn: port the_thread_control.heat_out -> heat_out;
+		music_control_conn: port the_thread_control.music_out -> music_out;
+		alarm_control_conn: port the_thread_control.alarm_out -> alarm_out;
+		video_conn: port video_from_camera -> the_thread_video.video_in;
+		video_transfer: port the_thread_video.video_out -> video_out;
+
+		video_control_conn: port the_thread_video.video_out -> the_thread_control.video_in;
+		gate_control_conn: port the_thread_control.gate_out -> gate_out;
+		gate_thread_conn: port gate_in -> the_thread_control.gate_in;
+
+end Controller.with_threads;
 	
 	thread ReadMotion
 		features
@@ -125,14 +127,17 @@ public
 	
 	
 	thread ControlRules
-		features
-			motion_in: in event port;
-			camera_out: out event port;
-			light_out: out event port;
-			heat_out: out event port;
-			music_out: out event port;
-			alarm_out: out event port;
-	end ControlRules;
+	features
+		video_in: in data port;
+		motion_in: in event port;
+		camera_out: out event port;
+		light_out: out event port;
+		heat_out: out event port;
+		music_out: out event port;
+		alarm_out: out event port;
+		gate_in: in event port;
+		gate_out: out event port;
+end ControlRules;
 	
 	thread implementation ControlRules.impl
 	end ControlRules.impl;
