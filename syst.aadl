@@ -43,7 +43,13 @@ public
 			bus_garage:bus access the_bus->the_garage_gate.bus_access;	
 			bus_music:bus access the_bus->the_music.bus_access;			
 			bus_processor:bus access the_bus->the_processor.bus_access;		
-			
+		PROPERTIES
+  			Actual_Processor_Binding => (reference (the_processor)) applies to the_controller;
+			Priority => 10 applies to the_controller.the_thread_motion;
+	        Priority => 09 applies to the_controller.the_thread_control;
+	        Priority => 03 applies to the_controller.the_thread_awake;
+	        Priority => 07 applies to the_controller.the_thread_video;
+        	Priority => 06 applies to the_controller.the_thread_car;
 			
 	end SmartHome.with_devices;
 	
@@ -69,12 +75,11 @@ end Controller;
 	process implementation Controller.with_threads
 	subcomponents
 		the_thread_motion: thread ReadMotion.impl;
-
 		the_thread_control: thread ControlRules.impl;
-
 		the_thread_awake: thread AwakeMotion.impl;
 		the_thread_awake_rules: thread AwakeRules.impl;
 		the_thread_video: thread ProcessVideo.impl;
+		the_thread_car: thread CarCheck.impl;
 	connections
 		motion_thread_conn: port motion_in -> the_thread_motion.motion_in;
 		motion_control_conn: port the_thread_motion.motion_out -> the_thread_control.motion_in;
@@ -82,6 +87,7 @@ end Controller;
 		awake_rules_conn: port the_thread_awake.motion_out -> the_thread_awake_rules.motion_in;
 		camera_control_conn: port the_thread_control.camera_out -> camera_out;
 		light_control_conn: port the_thread_control.light_out -> light_out;
+		recognized_conn: port the_thread_video.video_not_recognized -> the_thread_control.video_not_recognized;
 		coffee_control_conn: port the_thread_awake_rules.coffee_out -> coffee_out;
 		heat_control_conn: port the_thread_control.heat_out -> heat_out;
 		music_control_conn: port the_thread_control.music_out -> music_out;
@@ -89,9 +95,10 @@ end Controller;
 		video_conn: port video_from_camera -> the_thread_video.video_in;
 		video_transfer: port the_thread_video.video_out -> video_out;
 
-		video_control_conn: port the_thread_video.video_out -> the_thread_control.video_in;
+		--video_control_conn: port the_thread_video.video_out -> the_thread_control.video_not_recognized;
 		gate_control_conn: port the_thread_control.gate_out -> gate_out;
-		gate_thread_conn: port gate_in -> the_thread_control.gate_in;
+		car_thread_conn: port gate_in -> the_thread_car.motion_in;
+		gate_thread_conn: port the_thread_car.motion_out -> the_thread_control.gate_in;
 
 end Controller.with_threads;
 	
@@ -99,21 +106,29 @@ end Controller.with_threads;
 		features
 			motion_in: in event port;
 			motion_out: out event port;
-			
 	end ReadMotion;
 	
 	thread implementation ReadMotion.impl
+		PROPERTIES
+		  Dispatch_Protocol => Periodic;
+		  Compute_Execution_Time => 10ms .. 10ms;
+		  Period => 500 ms;
 	end ReadMotion.impl;
 	
-	thread GateMotion
+	
+	thread CarCheck
 		features
 			motion_in: in event port;
 			motion_out: out event port;
 			
-	end GateMotion;
+	end CarCheck;
 	
-	thread implementation GateMotion.impl
-	end GateMotion.impl;
+	thread implementation CarCheck.impl
+		PROPERTIES
+		  Dispatch_Protocol => Periodic;
+		  Compute_Execution_Time => 20ms .. 20ms;
+		  Period => 5000 ms;
+	end CarCheck.impl;
 	
 	thread AwakeMotion
 		features
@@ -123,12 +138,16 @@ end Controller.with_threads;
 	end AwakeMotion;
 	
 	thread implementation AwakeMotion.impl
+		PROPERTIES
+		  Dispatch_Protocol => Periodic;
+		  Compute_Execution_Time => 10ms .. 10ms;
+		  Period => 300000 ms;
 	end AwakeMotion.impl;
 	
 	
 	thread ControlRules
 	features
-		video_in: in data port;
+		video_not_recognized: in event port;
 		motion_in: in event port;
 		camera_out: out event port;
 		light_out: out event port;
@@ -137,20 +156,15 @@ end Controller.with_threads;
 		alarm_out: out event port;
 		gate_in: in event port;
 		gate_out: out event port;
-end ControlRules;
+	end ControlRules;
 	
 	thread implementation ControlRules.impl
+		PROPERTIES
+		  Dispatch_Protocol => Periodic;
+		  Compute_Execution_Time => 10ms .. 10ms;
+		  Period => 100 ms;
 	end ControlRules.impl;
 	
-	thread GateRules
-		features
-			motion_in: in event port;
-			gate_out: out event port;
-			
-	end GateRules;
-	
-	thread implementation GateRules.impl
-	end GateRules.impl;
 		
 	thread AwakeRules
 		features
@@ -160,16 +174,26 @@ end ControlRules;
 	end AwakeRules;
 	
 	thread implementation AwakeRules.impl
+		PROPERTIES
+		  Dispatch_Protocol => Periodic;
+		  Compute_Execution_Time => 10ms .. 10ms;
+		  Period => 10000 ms;
 	end AwakeRules.impl;
 	
 	thread ProcessVideo
 		features
 			video_in: in data port;	
-			video_out: out data port;			
+			video_out: out data port;	
+			video_not_recognized: out event port;		
 		
 	end ProcessVideo;
 	
 	thread implementation ProcessVideo.impl
+		PROPERTIES
+		  Dispatch_Protocol => Periodic;
+		  --Compute_Execution_Time => 50ms .. 500ms;
+		  Compute_Execution_Time => 30ms .. 30ms;
+		  Period => 1000 ms;
 	end ProcessVideo.impl;
 	
 	processor MainProcessor	
@@ -180,6 +204,8 @@ end ControlRules;
 	processor implementation MainProcessor.impl
 		subcomponents
 			the_ram: memory Ram;
+		properties
+			Scheduling_Protocol => (POSIX_1003_HIGHEST_PRIORITY_FIRST_PROTOCOL);
 	end MainProcessor.impl;
 	
 	memory Ram	
