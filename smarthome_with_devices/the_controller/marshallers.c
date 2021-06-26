@@ -6,8 +6,8 @@
 /*  Do NOT hand-modify this file, as your            */
 /*  changes will be lost when you re-run Ocarina     */
 /*****************************************************/
-void __po_hi_marshall_type_motion_state 
-    (home_types__motion_state value,
+void __po_hi_marshall_type_state 
+    (home_types__state value,
     __po_hi_msg_t* message,
     __po_hi_uint32_t* offset)
 {
@@ -15,8 +15,8 @@ void __po_hi_marshall_type_motion_state
   __po_hi_marshall_int (value, message, offset);
 }
 
-void __po_hi_unmarshall_type_motion_state 
-    (home_types__motion_state* value,
+void __po_hi_unmarshall_type_state 
+    (home_types__state* value,
     __po_hi_msg_t* message,
     __po_hi_uint32_t* offset)
 {
@@ -30,7 +30,7 @@ void __po_hi_marshall_request_the_thread_motion_motion_in
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_marshall_type_motion_state (request->vars.the_thread_motion_global_motion_in.the_thread_motion_global_motion_in, message, offset);
+  __po_hi_marshall_type_state (request->vars.the_thread_motion_global_motion_in.the_thread_motion_global_motion_in, message, offset);
 }
 
 void __po_hi_unmarshall_request_the_thread_motion_motion_in 
@@ -39,7 +39,7 @@ void __po_hi_unmarshall_request_the_thread_motion_motion_in
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_unmarshall_type_motion_state (&(request->vars.the_thread_motion_global_motion_in.the_thread_motion_global_motion_in), message, offset);
+  __po_hi_unmarshall_type_state (&(request->vars.the_thread_motion_global_motion_in.the_thread_motion_global_motion_in), message, offset);
 }
 
 void __po_hi_marshall_request_the_thread_motion_motion_out 
@@ -48,7 +48,7 @@ void __po_hi_marshall_request_the_thread_motion_motion_out
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_marshall_type_motion_state (request->vars.the_thread_motion_global_motion_out.the_thread_motion_global_motion_out, message, offset);
+  __po_hi_marshall_type_state (request->vars.the_thread_motion_global_motion_out.the_thread_motion_global_motion_out, message, offset);
 }
 
 void __po_hi_unmarshall_request_the_thread_motion_motion_out 
@@ -57,7 +57,7 @@ void __po_hi_unmarshall_request_the_thread_motion_motion_out
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_unmarshall_type_motion_state (&(request->vars.the_thread_motion_global_motion_out.the_thread_motion_global_motion_out), message, offset);
+  __po_hi_unmarshall_type_state (&(request->vars.the_thread_motion_global_motion_out.the_thread_motion_global_motion_out), message, offset);
 }
 
 void __po_hi_marshall_request_the_thread_control_video_not_recognized 
@@ -66,7 +66,7 @@ void __po_hi_marshall_request_the_thread_control_video_not_recognized
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_marshall_type_motion_state (request->vars.the_thread_control_global_video_not_recognized.the_thread_control_global_video_not_recognized, message, offset);
+  __po_hi_marshall_type_state (request->vars.the_thread_control_global_video_not_recognized.the_thread_control_global_video_not_recognized, message, offset);
 }
 
 void __po_hi_unmarshall_request_the_thread_control_video_not_recognized 
@@ -75,7 +75,7 @@ void __po_hi_unmarshall_request_the_thread_control_video_not_recognized
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_unmarshall_type_motion_state (&(request->vars.the_thread_control_global_video_not_recognized.the_thread_control_global_video_not_recognized), message, offset);
+  __po_hi_unmarshall_type_state (&(request->vars.the_thread_control_global_video_not_recognized.the_thread_control_global_video_not_recognized), message, offset);
 }
 
 void __po_hi_marshall_request_the_thread_control_motion_in 
@@ -84,7 +84,7 @@ void __po_hi_marshall_request_the_thread_control_motion_in
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_marshall_type_motion_state (request->vars.the_thread_control_global_motion_in.the_thread_control_global_motion_in, message, offset);
+  __po_hi_marshall_type_state (request->vars.the_thread_control_global_motion_in.the_thread_control_global_motion_in, message, offset);
 }
 
 void __po_hi_unmarshall_request_the_thread_control_motion_in 
@@ -93,7 +93,7 @@ void __po_hi_unmarshall_request_the_thread_control_motion_in
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_unmarshall_type_motion_state (&(request->vars.the_thread_control_global_motion_in.the_thread_control_global_motion_in), message, offset);
+  __po_hi_unmarshall_type_state (&(request->vars.the_thread_control_global_motion_in.the_thread_control_global_motion_in), message, offset);
 }
 
 void __po_hi_marshall_request_the_thread_control_camera_out 
@@ -102,7 +102,7 @@ void __po_hi_marshall_request_the_thread_control_camera_out
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_marshall_type_motion_state (request->vars.the_thread_control_global_camera_out.the_thread_control_global_camera_out, message, offset);
+  __po_hi_marshall_type_state (request->vars.the_thread_control_global_camera_out.the_thread_control_global_camera_out, message, offset);
 }
 
 void __po_hi_unmarshall_request_the_thread_control_camera_out 
@@ -111,7 +111,7 @@ void __po_hi_unmarshall_request_the_thread_control_camera_out
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_unmarshall_type_motion_state (&(request->vars.the_thread_control_global_camera_out.the_thread_control_global_camera_out), message, offset);
+  __po_hi_unmarshall_type_state (&(request->vars.the_thread_control_global_camera_out.the_thread_control_global_camera_out), message, offset);
 }
 
 void __po_hi_marshall_request_the_thread_control_light_out 
@@ -120,7 +120,7 @@ void __po_hi_marshall_request_the_thread_control_light_out
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_marshall_type_motion_state (request->vars.the_thread_control_global_light_out.the_thread_control_global_light_out, message, offset);
+  __po_hi_marshall_type_state (request->vars.the_thread_control_global_light_out.the_thread_control_global_light_out, message, offset);
 }
 
 void __po_hi_unmarshall_request_the_thread_control_light_out 
@@ -129,7 +129,7 @@ void __po_hi_unmarshall_request_the_thread_control_light_out
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_unmarshall_type_motion_state (&(request->vars.the_thread_control_global_light_out.the_thread_control_global_light_out), message, offset);
+  __po_hi_unmarshall_type_state (&(request->vars.the_thread_control_global_light_out.the_thread_control_global_light_out), message, offset);
 }
 
 void __po_hi_marshall_request_the_thread_control_heat_out 
@@ -138,7 +138,7 @@ void __po_hi_marshall_request_the_thread_control_heat_out
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_marshall_type_motion_state (request->vars.the_thread_control_global_heat_out.the_thread_control_global_heat_out, message, offset);
+  __po_hi_marshall_type_state (request->vars.the_thread_control_global_heat_out.the_thread_control_global_heat_out, message, offset);
 }
 
 void __po_hi_unmarshall_request_the_thread_control_heat_out 
@@ -147,7 +147,7 @@ void __po_hi_unmarshall_request_the_thread_control_heat_out
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_unmarshall_type_motion_state (&(request->vars.the_thread_control_global_heat_out.the_thread_control_global_heat_out), message, offset);
+  __po_hi_unmarshall_type_state (&(request->vars.the_thread_control_global_heat_out.the_thread_control_global_heat_out), message, offset);
 }
 
 void __po_hi_marshall_request_the_thread_control_music_out 
@@ -156,7 +156,7 @@ void __po_hi_marshall_request_the_thread_control_music_out
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_marshall_type_motion_state (request->vars.the_thread_control_global_music_out.the_thread_control_global_music_out, message, offset);
+  __po_hi_marshall_type_state (request->vars.the_thread_control_global_music_out.the_thread_control_global_music_out, message, offset);
 }
 
 void __po_hi_unmarshall_request_the_thread_control_music_out 
@@ -165,7 +165,7 @@ void __po_hi_unmarshall_request_the_thread_control_music_out
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_unmarshall_type_motion_state (&(request->vars.the_thread_control_global_music_out.the_thread_control_global_music_out), message, offset);
+  __po_hi_unmarshall_type_state (&(request->vars.the_thread_control_global_music_out.the_thread_control_global_music_out), message, offset);
 }
 
 void __po_hi_marshall_request_the_thread_control_alarm_out 
@@ -174,7 +174,7 @@ void __po_hi_marshall_request_the_thread_control_alarm_out
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_marshall_type_motion_state (request->vars.the_thread_control_global_alarm_out.the_thread_control_global_alarm_out, message, offset);
+  __po_hi_marshall_type_state (request->vars.the_thread_control_global_alarm_out.the_thread_control_global_alarm_out, message, offset);
 }
 
 void __po_hi_unmarshall_request_the_thread_control_alarm_out 
@@ -183,7 +183,7 @@ void __po_hi_unmarshall_request_the_thread_control_alarm_out
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_unmarshall_type_motion_state (&(request->vars.the_thread_control_global_alarm_out.the_thread_control_global_alarm_out), message, offset);
+  __po_hi_unmarshall_type_state (&(request->vars.the_thread_control_global_alarm_out.the_thread_control_global_alarm_out), message, offset);
 }
 
 void __po_hi_marshall_request_the_thread_control_gate_in 
@@ -192,7 +192,7 @@ void __po_hi_marshall_request_the_thread_control_gate_in
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_marshall_type_motion_state (request->vars.the_thread_control_global_gate_in.the_thread_control_global_gate_in, message, offset);
+  __po_hi_marshall_type_state (request->vars.the_thread_control_global_gate_in.the_thread_control_global_gate_in, message, offset);
 }
 
 void __po_hi_unmarshall_request_the_thread_control_gate_in 
@@ -201,7 +201,7 @@ void __po_hi_unmarshall_request_the_thread_control_gate_in
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_unmarshall_type_motion_state (&(request->vars.the_thread_control_global_gate_in.the_thread_control_global_gate_in), message, offset);
+  __po_hi_unmarshall_type_state (&(request->vars.the_thread_control_global_gate_in.the_thread_control_global_gate_in), message, offset);
 }
 
 void __po_hi_marshall_request_the_thread_control_gate_out 
@@ -210,7 +210,7 @@ void __po_hi_marshall_request_the_thread_control_gate_out
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_marshall_type_motion_state (request->vars.the_thread_control_global_gate_out.the_thread_control_global_gate_out, message, offset);
+  __po_hi_marshall_type_state (request->vars.the_thread_control_global_gate_out.the_thread_control_global_gate_out, message, offset);
 }
 
 void __po_hi_unmarshall_request_the_thread_control_gate_out 
@@ -219,7 +219,7 @@ void __po_hi_unmarshall_request_the_thread_control_gate_out
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_unmarshall_type_motion_state (&(request->vars.the_thread_control_global_gate_out.the_thread_control_global_gate_out), message, offset);
+  __po_hi_unmarshall_type_state (&(request->vars.the_thread_control_global_gate_out.the_thread_control_global_gate_out), message, offset);
 }
 
 void __po_hi_marshall_request_the_thread_awake_motion_in 
@@ -228,7 +228,7 @@ void __po_hi_marshall_request_the_thread_awake_motion_in
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_marshall_type_motion_state (request->vars.the_thread_awake_global_motion_in.the_thread_awake_global_motion_in, message, offset);
+  __po_hi_marshall_type_state (request->vars.the_thread_awake_global_motion_in.the_thread_awake_global_motion_in, message, offset);
 }
 
 void __po_hi_unmarshall_request_the_thread_awake_motion_in 
@@ -237,7 +237,7 @@ void __po_hi_unmarshall_request_the_thread_awake_motion_in
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_unmarshall_type_motion_state (&(request->vars.the_thread_awake_global_motion_in.the_thread_awake_global_motion_in), message, offset);
+  __po_hi_unmarshall_type_state (&(request->vars.the_thread_awake_global_motion_in.the_thread_awake_global_motion_in), message, offset);
 }
 
 void __po_hi_marshall_request_the_thread_awake_motion_out 
@@ -246,7 +246,7 @@ void __po_hi_marshall_request_the_thread_awake_motion_out
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_marshall_type_motion_state (request->vars.the_thread_awake_global_motion_out.the_thread_awake_global_motion_out, message, offset);
+  __po_hi_marshall_type_state (request->vars.the_thread_awake_global_motion_out.the_thread_awake_global_motion_out, message, offset);
 }
 
 void __po_hi_unmarshall_request_the_thread_awake_motion_out 
@@ -255,7 +255,7 @@ void __po_hi_unmarshall_request_the_thread_awake_motion_out
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_unmarshall_type_motion_state (&(request->vars.the_thread_awake_global_motion_out.the_thread_awake_global_motion_out), message, offset);
+  __po_hi_unmarshall_type_state (&(request->vars.the_thread_awake_global_motion_out.the_thread_awake_global_motion_out), message, offset);
 }
 
 void __po_hi_marshall_request_the_thread_awake_rules_motion_in 
@@ -264,7 +264,7 @@ void __po_hi_marshall_request_the_thread_awake_rules_motion_in
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_marshall_type_motion_state (request->vars.the_thread_awake_rules_global_motion_in.the_thread_awake_rules_global_motion_in, message, offset);
+  __po_hi_marshall_type_state (request->vars.the_thread_awake_rules_global_motion_in.the_thread_awake_rules_global_motion_in, message, offset);
 }
 
 void __po_hi_unmarshall_request_the_thread_awake_rules_motion_in 
@@ -273,7 +273,7 @@ void __po_hi_unmarshall_request_the_thread_awake_rules_motion_in
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_unmarshall_type_motion_state (&(request->vars.the_thread_awake_rules_global_motion_in.the_thread_awake_rules_global_motion_in), message, offset);
+  __po_hi_unmarshall_type_state (&(request->vars.the_thread_awake_rules_global_motion_in.the_thread_awake_rules_global_motion_in), message, offset);
 }
 
 void __po_hi_marshall_request_the_thread_awake_rules_coffee_out 
@@ -282,7 +282,7 @@ void __po_hi_marshall_request_the_thread_awake_rules_coffee_out
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_marshall_type_motion_state (request->vars.the_thread_awake_rules_global_coffee_out.the_thread_awake_rules_global_coffee_out, message, offset);
+  __po_hi_marshall_type_state (request->vars.the_thread_awake_rules_global_coffee_out.the_thread_awake_rules_global_coffee_out, message, offset);
 }
 
 void __po_hi_unmarshall_request_the_thread_awake_rules_coffee_out 
@@ -291,7 +291,7 @@ void __po_hi_unmarshall_request_the_thread_awake_rules_coffee_out
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_unmarshall_type_motion_state (&(request->vars.the_thread_awake_rules_global_coffee_out.the_thread_awake_rules_global_coffee_out), message, offset);
+  __po_hi_unmarshall_type_state (&(request->vars.the_thread_awake_rules_global_coffee_out.the_thread_awake_rules_global_coffee_out), message, offset);
 }
 
 void __po_hi_marshall_request_the_thread_video_video_in 
@@ -300,7 +300,7 @@ void __po_hi_marshall_request_the_thread_video_video_in
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_marshall_type_motion_state (request->vars.the_thread_video_global_video_in.the_thread_video_global_video_in, message, offset);
+  __po_hi_marshall_type_state (request->vars.the_thread_video_global_video_in.the_thread_video_global_video_in, message, offset);
 }
 
 void __po_hi_unmarshall_request_the_thread_video_video_in 
@@ -309,7 +309,7 @@ void __po_hi_unmarshall_request_the_thread_video_video_in
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_unmarshall_type_motion_state (&(request->vars.the_thread_video_global_video_in.the_thread_video_global_video_in), message, offset);
+  __po_hi_unmarshall_type_state (&(request->vars.the_thread_video_global_video_in.the_thread_video_global_video_in), message, offset);
 }
 
 void __po_hi_marshall_request_the_thread_video_video_out 
@@ -318,7 +318,7 @@ void __po_hi_marshall_request_the_thread_video_video_out
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_marshall_type_motion_state (request->vars.the_thread_video_global_video_out.the_thread_video_global_video_out, message, offset);
+  __po_hi_marshall_type_state (request->vars.the_thread_video_global_video_out.the_thread_video_global_video_out, message, offset);
 }
 
 void __po_hi_unmarshall_request_the_thread_video_video_out 
@@ -327,7 +327,7 @@ void __po_hi_unmarshall_request_the_thread_video_video_out
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_unmarshall_type_motion_state (&(request->vars.the_thread_video_global_video_out.the_thread_video_global_video_out), message, offset);
+  __po_hi_unmarshall_type_state (&(request->vars.the_thread_video_global_video_out.the_thread_video_global_video_out), message, offset);
 }
 
 void __po_hi_marshall_request_the_thread_video_video_not_recognized 
@@ -336,7 +336,7 @@ void __po_hi_marshall_request_the_thread_video_video_not_recognized
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_marshall_type_motion_state (request->vars.the_thread_video_global_video_not_recognized.the_thread_video_global_video_not_recognized, message, offset);
+  __po_hi_marshall_type_state (request->vars.the_thread_video_global_video_not_recognized.the_thread_video_global_video_not_recognized, message, offset);
 }
 
 void __po_hi_unmarshall_request_the_thread_video_video_not_recognized 
@@ -345,7 +345,7 @@ void __po_hi_unmarshall_request_the_thread_video_video_not_recognized
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_unmarshall_type_motion_state (&(request->vars.the_thread_video_global_video_not_recognized.the_thread_video_global_video_not_recognized), message, offset);
+  __po_hi_unmarshall_type_state (&(request->vars.the_thread_video_global_video_not_recognized.the_thread_video_global_video_not_recognized), message, offset);
 }
 
 void __po_hi_marshall_request_the_thread_car_motion_in 
@@ -354,7 +354,7 @@ void __po_hi_marshall_request_the_thread_car_motion_in
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_marshall_type_motion_state (request->vars.the_thread_car_global_motion_in.the_thread_car_global_motion_in, message, offset);
+  __po_hi_marshall_type_state (request->vars.the_thread_car_global_motion_in.the_thread_car_global_motion_in, message, offset);
 }
 
 void __po_hi_unmarshall_request_the_thread_car_motion_in 
@@ -363,7 +363,7 @@ void __po_hi_unmarshall_request_the_thread_car_motion_in
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_unmarshall_type_motion_state (&(request->vars.the_thread_car_global_motion_in.the_thread_car_global_motion_in), message, offset);
+  __po_hi_unmarshall_type_state (&(request->vars.the_thread_car_global_motion_in.the_thread_car_global_motion_in), message, offset);
 }
 
 void __po_hi_marshall_request_the_thread_car_motion_out 
@@ -372,7 +372,7 @@ void __po_hi_marshall_request_the_thread_car_motion_out
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_marshall_type_motion_state (request->vars.the_thread_car_global_motion_out.the_thread_car_global_motion_out, message, offset);
+  __po_hi_marshall_type_state (request->vars.the_thread_car_global_motion_out.the_thread_car_global_motion_out, message, offset);
 }
 
 void __po_hi_unmarshall_request_the_thread_car_motion_out 
@@ -381,7 +381,7 @@ void __po_hi_unmarshall_request_the_thread_car_motion_out
     __po_hi_uint32_t* offset)
 {
 
-  __po_hi_unmarshall_type_motion_state (&(request->vars.the_thread_car_global_motion_out.the_thread_car_global_motion_out), message, offset);
+  __po_hi_unmarshall_type_state (&(request->vars.the_thread_car_global_motion_out.the_thread_car_global_motion_out), message, offset);
 }
 
 void __po_hi_marshall_request 

@@ -11,6 +11,6 @@
 
 /*****************************************************/
 
-typedef int home_types__motion_state;
+typedef int home_types__state;
 
 #endif

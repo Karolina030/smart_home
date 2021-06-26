@@ -14,13 +14,13 @@
 
 /*****************************************************/
 
-void __po_hi_marshall_type_motion_state 
-    (home_types__motion_state value,
+void __po_hi_marshall_type_state 
+    (home_types__state value,
     __po_hi_msg_t* message,
     __po_hi_uint32_t* offset);
 
-void __po_hi_unmarshall_type_motion_state 
-    (home_types__motion_state* value,
+void __po_hi_unmarshall_type_state 
+    (home_types__state* value,
     __po_hi_msg_t* message,
     __po_hi_uint32_t* offset);
 

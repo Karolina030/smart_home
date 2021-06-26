@@ -17,12 +17,12 @@ BINARY = the_controller
 TARGET = native
 NEED_TRANSPORT = yes
 RUNTIME_PATH=$(shell echo "/opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-c" | sed 's/ /\\ /g')
-USER_SOURCES_DIRS= "-I/home/gjn/.ocal/workspace/projekt"
+USER_SOURCES_DIRS= "-I/home/gjn/Desktop/ProjektNew"
 ASN_SOURCES=
 include $(RUNTIME_PATH)/make/Makefile.common
 
 compile-c-files:
-	$(CC) -c $(INCLUDE) $(CFLAGS) -I'/home/gjn/.ocal/workspace/projekt/' '/home/gjn/.ocal/workspace/projekt/home.c' -o home.o
+	$(CC) -c $(INCLUDE) $(CFLAGS) -I'/home/gjn/Desktop/ProjektNew/' '/home/gjn/Desktop/ProjektNew/home.c' -o home.o
 
 compile-cpp-files:
 

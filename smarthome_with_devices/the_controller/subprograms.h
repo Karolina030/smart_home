@@ -12,35 +12,35 @@
 /*****************************************************/
 
 void syst__motion_processing 
-    (home_types__motion_state movement_data,
-    home_types__motion_state* person_in_room);
+    (home_types__state movement_data,
+    home_types__state* person_in_room);
 
 void syst__control_processing 
-    (home_types__motion_state movement_data,
-    home_types__motion_state video_data,
-    home_types__motion_state* camera_out,
-    home_types__motion_state* light_out,
-    home_types__motion_state* heat_out,
-    home_types__motion_state* music_out,
-    home_types__motion_state* alarm_out,
-    home_types__motion_state gate_in,
-    home_types__motion_state* gate_out);
+    (home_types__state movement_data,
+    home_types__state video_not_recognized,
+    home_types__state* camera_out,
+    home_types__state* light_out,
+    home_types__state* heat_out,
+    home_types__state* music_out,
+    home_types__state* alarm_out,
+    home_types__state gate_in,
+    home_types__state* gate_out);
 
 void syst__awake_processing 
-    (home_types__motion_state movement_data,
-    home_types__motion_state* motion_out);
+    (home_types__state movement_data,
+    home_types__state* motion_out);
 
 void syst__awake_processing_rules 
-    (home_types__motion_state movement_data,
-    home_types__motion_state* coffee_out);
+    (home_types__state movement_data,
+    home_types__state* coffee_out);
 
 void syst__video_processing 
-    (home_types__motion_state video_in,
-    home_types__motion_state* video_out,
-    home_types__motion_state* video_not_recognized);
+    (home_types__state video_in,
+    home_types__state* video_out,
+    home_types__state* video_not_recognized);
 
 void syst__car_processing 
-    (home_types__motion_state movement_data,
-    home_types__motion_state* car_detected);
+    (home_types__state movement_data,
+    home_types__state* car_detected);
 
 #endif

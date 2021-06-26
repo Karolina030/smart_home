@@ -35,7 +35,7 @@
         <point x="249.0" y="568.0"/>
         <point x="249.0" y="384.0"/>
         <point x="2627.0" y="384.0"/>
-        <point x="2627.0" y="1010.7857142857143"/>
+        <point x="2627.0" y="1011.0"/>
       </bendpoints>
     </element>
     <element uuid="e77e9cf3-c7dd-4607-bb77-93dcc14204e1" manual="true">
@@ -143,7 +143,7 @@
       <bendpoints>
         <point x="213.0" y="578.0"/>
         <point x="259.0" y="578.0"/>
-        <point x="259.0" y="472.5"/>
+        <point x="259.0" y="473.0"/>
       </bendpoints>
     </element>
     <element uuid="3ef63a32-d13d-4b12-96ab-cd2ddd1b9106" manual="true">
@@ -158,7 +158,7 @@
         <seg>camera_conn_in</seg>
       </bo>
       <bendpoints>
-        <point x="2607.0" y="972.0714285714287"/>
+        <point x="2607.0" y="972.0"/>
         <point x="2607.0" y="1521.0"/>
       </bendpoints>
     </element>
@@ -218,7 +218,7 @@
         <seg>garage_conn</seg>
       </bo>
       <bendpoints>
-        <point x="2607.0" y="705.9285714285714"/>
+        <point x="2607.0" y="706.0"/>
         <point x="2607.0" y="293.0"/>
       </bendpoints>
     </element>
@@ -234,7 +234,7 @@
         <seg>heater_conn</seg>
       </bo>
       <bendpoints>
-        <point x="2617.0" y="883.3571428571429"/>
+        <point x="2617.0" y="883.0"/>
         <point x="2617.0" y="1499.0"/>
       </bendpoints>
     </element>
@@ -250,7 +250,7 @@
         <seg>light_conn</seg>
       </bo>
       <bendpoints>
-        <point x="2617.0" y="794.6428571428571"/>
+        <point x="2617.0" y="795.0"/>
         <point x="2617.0" y="423.0"/>
       </bendpoints>
     </element>
@@ -278,7 +278,7 @@
         <seg>music_conn</seg>
       </bo>
       <bendpoints>
-        <point x="2597.0" y="617.2142857142858"/>
+        <point x="2597.0" y="617.0"/>
         <point x="2597.0" y="163.0"/>
       </bendpoints>
     </element>
@@ -593,8 +593,8 @@
           <seg>motion_control_conn</seg>
         </bo>
         <bendpoints>
-          <point x="1772.0" y="587.5"/>
-          <point x="1772.0" y="683.25"/>
+          <point x="1772.0" y="588.0"/>
+          <point x="1772.0" y="683.0"/>
         </bendpoints>
       </element>
       <element uuid="3e437d22-c2db-4732-8316-b6f352a6aaf2" manual="true">
@@ -634,7 +634,7 @@
         </bo>
         <bendpoints>
           <point x="1772.0" y="1061.0"/>
-          <point x="1772.0" y="993.75"/>
+          <point x="1772.0" y="994.0"/>
         </bendpoints>
       </element>
       <element uuid="a96ce926-85cc-4305-977c-d4436708b85c" manual="true">
@@ -1239,12 +1239,12 @@
               </bo>
               <position x="333.0" y="46.0"/>
             </element>
-            <element uuid="96904000-1f0a-4799-8d0f-7e9fec2a7d22" manual="true" dockArea="left">
+            <element uuid="7b1d6b1f-4fd5-474f-9fe2-651e182fe326" manual="true" dockArea="left">
               <bo>
                 <seg>feature</seg>
-                <seg>video_data</seg>
+                <seg>video_not_recognized</seg>
               </bo>
-              <position y="160.0"/>
+              <position y="155.0"/>
             </element>
             <element uuid="201f6306-b47f-4abb-828a-b1907ff09984" manual="true">
               <bo>

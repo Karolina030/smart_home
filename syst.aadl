@@ -213,7 +213,7 @@ public
 			motion_out: out parameter home_types::State;
 		properties
 			source_language => (C);
-			source_name => "readMotion";
+			source_name => "awakeMotion";
 			source_text => ("home.c");
 	END Awake_Processing;
 	
@@ -238,7 +238,7 @@ public
 			};
 		connections
 			c0: parameter motion_in -> Q.movement_data;
-			c1: parameter video_not_recognized -> Q.video_data;
+			c1: parameter video_not_recognized -> Q.video_not_recognized;
 			c2: parameter gate_in -> Q.gate_in;
 			c3: parameter Q.camera_out -> camera_out;
 			c4: parameter Q.light_out -> light_out;
@@ -256,7 +256,7 @@ public
 	SUBPROGRAM Control_Processing
 		FEATURES
 			movement_data: in parameter home_types::State;
-			video_data: in parameter home_types::State;
+			video_not_recognized: in parameter home_types::State;
 			camera_out: out parameter home_types::State;
 			light_out: out parameter home_types::State;
 			heat_out: out parameter home_types::State;
@@ -267,7 +267,7 @@ public
 			
 		properties
 			source_language => (C);
-			source_name => "readMotion"; -- zmienić na inną funkcję
+			source_name => "controlRules"; 
 			source_text => ("home.c");
 	END Control_Processing;
 	
@@ -300,7 +300,7 @@ public
 			coffee_out: out parameter home_types::State;
 		properties
 			source_language => (C);
-			source_name => "Awake_Proccessing_Rules"; -- zmienić funkcję
+			source_name => "awake_Proccessing_Rules"; -- zmienić funkcję
 			source_text => ("home.c");
 	END Awake_Processing_Rules;
 	
@@ -337,7 +337,7 @@ public
 			
 		properties
 			source_language => (C);
-			source_name => "readMotion"; -- zmienić funkcję
+			source_name => "processVideo"; -- zmienić funkcję
 			source_text => ("home.c");
 	END Video_Processing;
 	

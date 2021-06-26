@@ -69,7 +69,7 @@ void the_thread_motion_deliver
 void* the_thread_motion_job (void)
 {
   __po_hi_request_t static motion_in_request;
-  home_types__motion_state person_in_room_request_var;
+  home_types__state person_in_room_request_var;
   __po_hi_request_t motion_out_request;
   __po_hi_int32_t error;
 
@@ -185,12 +185,12 @@ void* the_thread_control_job (void)
   __po_hi_request_t static video_not_recognized_request;
   __po_hi_request_t static motion_in_request;
   __po_hi_request_t static gate_in_request;
-  home_types__motion_state camera_out_request_var;
-  home_types__motion_state light_out_request_var;
-  home_types__motion_state heat_out_request_var;
-  home_types__motion_state music_out_request_var;
-  home_types__motion_state alarm_out_request_var;
-  home_types__motion_state gate_out_request_var;
+  home_types__state camera_out_request_var;
+  home_types__state light_out_request_var;
+  home_types__state heat_out_request_var;
+  home_types__state music_out_request_var;
+  home_types__state alarm_out_request_var;
+  home_types__state gate_out_request_var;
   __po_hi_request_t camera_out_request;
   __po_hi_request_t light_out_request;
   __po_hi_request_t heat_out_request;
@@ -329,7 +329,7 @@ void the_thread_awake_deliver
 void* the_thread_awake_job (void)
 {
   __po_hi_request_t static motion_in_request;
-  home_types__motion_state motion_out_request_var;
+  home_types__state motion_out_request_var;
   __po_hi_request_t motion_out_request;
   __po_hi_int32_t error;
 
@@ -426,7 +426,7 @@ void the_thread_awake_rules_deliver
 void* the_thread_awake_rules_job (void)
 {
   __po_hi_request_t static motion_in_request;
-  home_types__motion_state coffee_out_request_var;
+  home_types__state coffee_out_request_var;
   __po_hi_request_t coffee_out_request;
   __po_hi_int32_t error;
 
@@ -524,8 +524,8 @@ void the_thread_video_deliver
 void* the_thread_video_job (void)
 {
   __po_hi_request_t static video_in_request;
-  home_types__motion_state video_out_request_var;
-  home_types__motion_state video_not_recognized_request_var;
+  home_types__state video_out_request_var;
+  home_types__state video_not_recognized_request_var;
   __po_hi_request_t video_out_request;
   __po_hi_request_t video_not_recognized_request;
   __po_hi_int32_t error;
@@ -628,7 +628,7 @@ void the_thread_car_deliver
 void* the_thread_car_job (void)
 {
   __po_hi_request_t static motion_in_request;
-  home_types__motion_state car_detected_request_var;
+  home_types__state car_detected_request_var;
   __po_hi_request_t motion_out_request;
   __po_hi_int32_t error;
 
