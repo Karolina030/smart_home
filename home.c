@@ -19,6 +19,22 @@ int readMotion(int movement_data, int *person_in_room)
 	}
 }
 
+int carCheck(int movement_data, int *car_detected)
+{
+	if(movement_data == 1)
+	{
+		printf("Wykryto samochód\n");
+		*car_detected = 1;
+		return 1;
+	}
+	else
+	{
+		printf("Nie wykryto samochodu na zapisie wideo\n");
+		*car_detected = 0;
+		return 0;		
+	}
+}
+
 int Awake_Processing_Rules(int movement_data, int *coffee_out)
 {
 	if(movement_data == 1)
@@ -34,3 +50,5 @@ int Awake_Processing_Rules(int movement_data, int *coffee_out)
 		return 0;		
 	}
 }
+
+

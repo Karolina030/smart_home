@@ -75,20 +75,20 @@ public
 	
 	process Controller
 	features
-		video_from_camera: in data port home_types::motion_State;
+		video_from_camera: in data port home_types::State;
 
-		video_out: out data port home_types::motion_State;
+		video_out: out data port home_types::State;
 
-		motion_in: in data port home_types::motion_State;
-		gate_in: in data port home_types::motion_State;
-		awake_in: in data port home_types::motion_State;
-		camera_out: out data port home_types::motion_State;
-		light_out: out data port home_types::motion_State;
-		gate_out: out data port home_types::motion_State;
-		coffee_out: out data port home_types::motion_State;
-		heat_out: out data port home_types::motion_State;
-		music_out: out data port home_types::motion_State;
-		alarm_out: out data port home_types::motion_State;
+		motion_in: in data port home_types::State;
+		gate_in: in data port home_types::State;
+		awake_in: in data port home_types::State;
+		camera_out: out data port home_types::State;
+		light_out: out data port home_types::State;
+		gate_out: out data port home_types::State;
+		coffee_out: out data port home_types::State;
+		heat_out: out data port home_types::State;
+		music_out: out data port home_types::State;
+		alarm_out: out data port home_types::State;
 
 	end Controller;
 	
@@ -124,8 +124,8 @@ public
 	
 	thread ReadMotion
 		features
-			motion_in: in data port home_types::motion_State;
-			motion_out: out data port home_types::motion_State;
+			motion_in: in data port home_types::State;
+			motion_out: out data port home_types::State;
 	end ReadMotion;
 	
 	thread implementation ReadMotion.impl
@@ -145,8 +145,8 @@ public
 	
 	SUBPROGRAM Motion_Processing
 		FEATURES
-			movement_data: in parameter home_types::motion_State;
-			person_in_room: out parameter home_types::motion_State;
+			movement_data: in parameter home_types::State;
+			person_in_room: out parameter home_types::State;
 		properties
 			source_language => (C);
 			source_name => "readMotion";
@@ -156,8 +156,8 @@ public
 	
 	thread CarCheck
 		features
-			motion_in: in data port home_types::motion_State;
-			motion_out: out data port home_types::motion_State;
+			motion_in: in data port home_types::State;
+			motion_out: out data port home_types::State;
 			
 	end CarCheck;
 	
@@ -178,18 +178,18 @@ public
 	
 	SUBPROGRAM Car_Processing
 		FEATURES
-			movement_data: in parameter home_types::motion_State;
-			car_detected: out parameter home_types::motion_State;
+			movement_data: in parameter home_types::State;
+			car_detected: out parameter home_types::State;
 		properties
 			source_language => (C);
-			source_name => "readMotion";
+			source_name => "carCheck";
 			source_text => ("home.c");
 	END Car_Processing;
 	
 	thread AwakeMotion
 		features
-			motion_in: in data port home_types::motion_State;
-			motion_out: out data port home_types::motion_State;
+			motion_in: in data port home_types::State;
+			motion_out: out data port home_types::State;
 			
 	end AwakeMotion;
 	
@@ -209,8 +209,8 @@ public
 	
 	SUBPROGRAM Awake_Processing
 		FEATURES
-			movement_data: in parameter home_types::motion_State;
-			motion_out: out parameter home_types::motion_State;
+			movement_data: in parameter home_types::State;
+			motion_out: out parameter home_types::State;
 		properties
 			source_language => (C);
 			source_name => "readMotion";
@@ -220,15 +220,15 @@ public
 	
 	thread ControlRules
 		features
-			video_not_recognized: in data port home_types::motion_State;
-			motion_in: in data port home_types::motion_State;
-			camera_out: out data port home_types::motion_State;
-			light_out: out data port home_types::motion_State;
-			heat_out: out data port home_types::motion_State;
-			music_out: out data port home_types::motion_State;
-			alarm_out: out data port home_types::motion_State;
-			gate_in: in data port home_types::motion_State;
-			gate_out: out data port home_types::motion_State;
+			video_not_recognized: in data port home_types::State;
+			motion_in: in data port home_types::State;
+			camera_out: out data port home_types::State;
+			light_out: out data port home_types::State;
+			heat_out: out data port home_types::State;
+			music_out: out data port home_types::State;
+			alarm_out: out data port home_types::State;
+			gate_in: in data port home_types::State;
+			gate_out: out data port home_types::State;
 	end ControlRules;
 	
 	thread implementation ControlRules.impl
@@ -255,15 +255,15 @@ public
 	
 	SUBPROGRAM Control_Processing
 		FEATURES
-			movement_data: in parameter home_types::motion_State;
-			video_data: in parameter home_types::motion_State;
-			camera_out: out parameter home_types::motion_State;
-			light_out: out parameter home_types::motion_State;
-			heat_out: out parameter home_types::motion_State;
-			music_out: out parameter home_types::motion_State;
-			alarm_out: out parameter home_types::motion_State;
-			gate_in: in parameter home_types::motion_State;
-			gate_out: out parameter home_types::motion_State;
+			movement_data: in parameter home_types::State;
+			video_data: in parameter home_types::State;
+			camera_out: out parameter home_types::State;
+			light_out: out parameter home_types::State;
+			heat_out: out parameter home_types::State;
+			music_out: out parameter home_types::State;
+			alarm_out: out parameter home_types::State;
+			gate_in: in parameter home_types::State;
+			gate_out: out parameter home_types::State;
 			
 		properties
 			source_language => (C);
@@ -274,8 +274,8 @@ public
 		
 	thread AwakeRules
 		features
-			motion_in: in data port home_types::motion_State;
-			coffee_out: out data port home_types::motion_State;
+			motion_in: in data port home_types::State;
+			coffee_out: out data port home_types::State;
 			
 	end AwakeRules;
 	
@@ -296,19 +296,19 @@ public
 	
 	SUBPROGRAM Awake_Processing_Rules
 		FEATURES
-			movement_data: in parameter home_types::motion_State;
-			coffee_out: out parameter home_types::motion_State;
+			movement_data: in parameter home_types::State;
+			coffee_out: out parameter home_types::State;
 		properties
 			source_language => (C);
-			source_name => "readMotion"; -- zmienić funkcję
+			source_name => "Awake_Proccessing_Rules"; -- zmienić funkcję
 			source_text => ("home.c");
 	END Awake_Processing_Rules;
 	
 	thread ProcessVideo
 		features
-			video_in: in data port home_types::motion_State;	
-			video_out: out data port home_types::motion_State;
-			video_not_recognized: out data port home_types::motion_State;		
+			video_in: in data port home_types::State;	
+			video_out: out data port home_types::State;
+			video_not_recognized: out data port home_types::State;		
 		
 	end ProcessVideo;
 	
@@ -331,9 +331,9 @@ public
 	
 	SUBPROGRAM Video_Processing
 		FEATURES
-			video_in: in parameter home_types::motion_State;
-			video_out: out parameter home_types::motion_State;
-			video_not_recognized: out parameter home_types::motion_State;
+			video_in: in parameter home_types::State;
+			video_out: out parameter home_types::State;
+			video_not_recognized: out parameter home_types::State;
 			
 		properties
 			source_language => (C);
@@ -381,7 +381,7 @@ public
 	
 	device MotionSensor
 		features
-			motion_detected: out data port home_types::motion_State;
+			motion_detected: out data port home_types::State;
 			bus_access: requires bus access HWConnection.impl;
 	end MotionSensor;
 	
@@ -390,7 +390,7 @@ public
 	
 	device CarSensor
 		features
-			car_detected: out data port home_types::motion_State;
+			car_detected: out data port home_types::State;
 			bus_access: requires bus access HWConnection.impl;
 	end CarSensor;
 	
@@ -399,7 +399,7 @@ public
 	
 	device AwakeSensor
 		features
-			awake_detected: out data port home_types::motion_State;
+			awake_detected: out data port home_types::State;
 			bus_access: requires bus access HWConnection.impl;
 	end AwakeSensor;
 	
@@ -408,8 +408,8 @@ public
 	
 	device Camera
 		features
-			camera_on_off: in data port home_types::motion_State;
-			video_stream: out data port home_types::motion_State;
+			camera_on_off: in data port home_types::State;
+			video_stream: out data port home_types::State;
 			bus_access: requires bus access HWConnection.impl;
 			
 	end Camera;
@@ -419,7 +419,7 @@ public
 	
 	device Heater
 		features
-			heater_on_off: in data port home_types::motion_State;
+			heater_on_off: in data port home_types::State;
 			bus_access: requires bus access HWConnection.impl;
 			
 	end Heater;
@@ -430,7 +430,7 @@ public
 	
 	device Light
 		features
-			light_on_off: in data port home_types::motion_State;
+			light_on_off: in data port home_types::State;
 			bus_access: requires bus access HWConnection.impl;
 			
 	end Light;
@@ -440,7 +440,7 @@ public
 	
 	device Garage
 		features
-			garage_on_off: in data port home_types::motion_State;
+			garage_on_off: in data port home_types::State;
 			bus_access: requires bus access HWConnection.impl;
 			
 	end Garage;
@@ -450,7 +450,7 @@ public
 	
 	device CoffeeMaker
 		features
-			coffee_on_off: in data port home_types::motion_State;
+			coffee_on_off: in data port home_types::State;
 			bus_access: requires bus access HWConnection.impl;
 			
 	end CoffeeMaker;
@@ -460,7 +460,7 @@ public
 	
 	device Music
 		features
-			music_on_off: in data port home_types::motion_State;
+			music_on_off: in data port home_types::State;
 			bus_access: requires bus access HWConnection.impl;
 			
 	end Music;
@@ -471,7 +471,7 @@ public
 	
 	device SecurityCenter
 		features
-			video_in: in data port home_types::motion_State;		
+			video_in: in data port home_types::State;		
 	end SecurityCenter;
 	
 	device implementation SecurityCenter.impl
@@ -480,7 +480,7 @@ public
 	
 	device AlarmUnit
 		features
-			alarm_on_off: in data port home_types::motion_State;
+			alarm_on_off: in data port home_types::State;
 			bus_access: requires bus access HWConnection.impl;
 			
 	end AlarmUnit;

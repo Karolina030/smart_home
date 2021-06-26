@@ -4,9 +4,9 @@ public
 	with Data_Model;
 
 	-----Data
-	data motion_State
+	data State
 		properties
 			Data_Model::Data_Representation => integer;
-	end motion_State;
+	end State;
 	
 end home_types;
