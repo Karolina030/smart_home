@@ -1,0 +1,12 @@
+package home_types
+public
+	
+	with Data_Model;
+
+	-----Data
+	data motion_State
+		properties
+			Data_Model::Data_Representation => integer;
+	end motion_State;
+	
+end home_types;

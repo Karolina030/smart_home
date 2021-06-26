@@ -1,0 +1,50 @@
+[GENERATED OBJECT FILE]
+b__the_controller.o
+[PROJECT FILES]
+/home/gjn/.ocal/workspace/projekt/smarthome_with_devices/the_controller/the_controller.gpr
+20210626155240
+/opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/polyorb_hi.gpr
+20170204221544
+[BOUND OBJECT FILES]
+/home/gjn/.ocal/workspace/projekt/smarthome_with_devices/the_controller/polyorb_hi.o
+/home/gjn/.ocal/workspace/projekt/smarthome_with_devices/the_controller/polyorb_hi-streams.o
+/home/gjn/.ocal/workspace/projekt/smarthome_with_devices/the_controller/polyorb_hi_generated.o
+/home/gjn/.ocal/workspace/projekt/smarthome_with_devices/the_controller/polyorb_hi_generated-deployment.o
+/home/gjn/.ocal/workspace/projekt/smarthome_with_devices/the_controller/polyorb_hi-utils.o
+/home/gjn/.ocal/workspace/projekt/smarthome_with_devices/the_controller/polyorb_hi-messages.o
+/home/gjn/.ocal/workspace/projekt/smarthome_with_devices/the_controller/polyorb_hi-errors.o
+/home/gjn/.ocal/workspace/projekt/smarthome_with_devices/the_controller/polyorb_hi-marshallers_g.o
+/home/gjn/.ocal/workspace/projekt/smarthome_with_devices/the_controller/polyorb_hi-output_low_level_native.o
+/home/gjn/.ocal/workspace/projekt/smarthome_with_devices/the_controller/polyorb_hi-port_kinds.o
+/home/gjn/.ocal/workspace/projekt/smarthome_with_devices/the_controller/polyorb_hi-port_type_marshallers.o
+/home/gjn/.ocal/workspace/projekt/smarthome_with_devices/the_controller/polyorb_hi-suspenders.o
+/home/gjn/.ocal/workspace/projekt/smarthome_with_devices/the_controller/polyorb_hi-output.o
+/home/gjn/.ocal/workspace/projekt/smarthome_with_devices/the_controller/polyorb_hi-periodic_task.o
+/home/gjn/.ocal/workspace/projekt/smarthome_with_devices/the_controller/polyorb_hi-time_marshallers.o
+/home/gjn/.ocal/workspace/projekt/smarthome_with_devices/the_controller/polyorb_hi-unprotected_queue.o
+/home/gjn/.ocal/workspace/projekt/smarthome_with_devices/the_controller/polyorb_hi-thread_interrogators.o
+/home/gjn/.ocal/workspace/projekt/smarthome_with_devices/the_controller/polyorb_hi_generated-types.o
+/home/gjn/.ocal/workspace/projekt/smarthome_with_devices/the_controller/polyorb_hi_generated-subprograms.o
+/home/gjn/.ocal/workspace/projekt/smarthome_with_devices/the_controller/polyorb_hi_generated-marshallers.o
+/home/gjn/.ocal/workspace/projekt/smarthome_with_devices/the_controller/polyorb_hi_generated-transport.o
+/home/gjn/.ocal/workspace/projekt/smarthome_with_devices/the_controller/polyorb_hi_generated-activity.o
+/home/gjn/.ocal/workspace/projekt/smarthome_with_devices/the_controller/the_controller.o
+[GENERATED SOURCE FILES]
+b__the_controller.ads
+b__the_controller.adb
+b__the_controller.ali
+[RESULTING OPTIONS]
+-L/home/gjn/.ocal/workspace/projekt/smarthome_with_devices/the_controller/
+-L/home/gjn/.ocal/workspace/projekt/smarthome_with_devices/the_controller/
+-L/opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/
+-L/usr/lib/gcc/x86_64-linux-gnu/9/adalib/
+-shared
+-shared-libgcc
+-lgnarl-9
+-lgnat-9
+-lpthread
+-lrt
+-ldl
+[RUN PATH OPTION]
+/usr/lib/gcc/x86_64-linux-gnu/9/adalib/
+/usr/lib

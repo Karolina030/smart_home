@@ -1,0 +1,920 @@
+V "GNAT Lib v9"
+A -O1
+A -gnatA
+A -g
+A -gnatwa
+A -gnatwG
+A -gnat12
+A -g
+A -gnata
+A -gnato
+A -gnatE
+A -mtune=generic
+A -march=x86-64
+P LC ZX
+
+RN
+RR NO_ALLOCATORS
+RR NO_DISPATCH
+RV NO_ENTRY_CALLS_IN_ELABORATION_CODE
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTION_PROPAGATION
+RV NO_EXCEPTIONS
+RR NO_IO
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_PROTECTED_TYPES
+RR NO_RECURSION
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RR NO_UNCHECKED_ACCESS
+RR NO_UNCHECKED_DEALLOCATION
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV NO_OBSOLESCENT_FEATURES
+RV SPARK_05
+RV MAX_PROTECTED_ENTRIES=1
+RV MAX_ENTRY_QUEUE_LENGTH=1+
+
+U polyorb_hi_generated.activity%b  polyorb_hi_generated-activity.adb  632288c9 DE OO PK
+W ada%s			ada.ads			ada.ali
+Z ada.real_time%s	a-reatim.adb		a-reatim.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+Z ada.unchecked_conversion%s
+Z interfaces%s		interfac.ads		interfac.ali
+W polyorb_hi%s		polyorb_hi.ads		polyorb_hi.ali
+Z polyorb_hi.errors%s	polyorb_hi-errors.ads	polyorb_hi-errors.ali
+Z polyorb_hi.messages%s	polyorb_hi-messages.adb	polyorb_hi-messages.ali
+Z polyorb_hi.output%s	polyorb_hi-output.adb	polyorb_hi-output.ali
+W polyorb_hi.port_kinds%s  polyorb_hi-port_kinds.adb  polyorb_hi-port_kinds.ali
+Z polyorb_hi.port_type_marshallers%s  polyorb_hi-port_type_marshallers.ads  polyorb_hi-port_type_marshallers.ali
+Z polyorb_hi.streams%s	polyorb_hi-streams.ads	polyorb_hi-streams.ali
+W polyorb_hi.thread_interrogators%s  polyorb_hi-thread_interrogators.adb  polyorb_hi-thread_interrogators.ali  EA
+Z polyorb_hi.time_marshallers%s  polyorb_hi-time_marshallers.ads  polyorb_hi-time_marshallers.ali
+Z polyorb_hi.unprotected_queue%s  polyorb_hi-unprotected_queue.adb  polyorb_hi-unprotected_queue.ali
+Z polyorb_hi.utils%s	polyorb_hi-utils.adb	polyorb_hi-utils.ali
+W polyorb_hi_generated%s  polyorb_hi_generated.ads  polyorb_hi_generated.ali
+Z polyorb_hi_generated.deployment%s  polyorb_hi_generated-deployment.ads  polyorb_hi_generated-deployment.ali
+W polyorb_hi_generated.marshallers%s  polyorb_hi_generated-marshallers.adb  polyorb_hi_generated-marshallers.ali
+W polyorb_hi_generated.subprograms%s  polyorb_hi_generated-subprograms.ads  polyorb_hi_generated-subprograms.ali
+W polyorb_hi_generated.transport%s  polyorb_hi_generated-transport.adb  polyorb_hi_generated-transport.ali
+Z system%s		system.ads		system.ali
+Z system.assertions%s	s-assert.adb		s-assert.ali
+Z system.img_int%s	s-imgint.adb		s-imgint.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.tasking%s	s-taskin.adb		s-taskin.ali
+Z system.tasking.protected_objects%s  s-taprob.adb  s-taprob.ali
+Z system.tasking.protected_objects.entries%s  s-tpoben.adb  s-tpoben.ali
+Z system.tasking.protected_objects.operations%s  s-tpobop.adb  s-tpobop.ali
+
+U polyorb_hi_generated.activity%s  polyorb_hi_generated-activity.ads  2adae444 DE EE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.real_time%s	a-reatim.adb		a-reatim.ali
+Z ada.real_time.delays%s  a-retide.adb		a-retide.ali
+W polyorb_hi%s		polyorb_hi.ads		polyorb_hi.ali
+W polyorb_hi.errors%s	polyorb_hi-errors.ads	polyorb_hi-errors.ali
+Z polyorb_hi.output%s	polyorb_hi-output.adb	polyorb_hi-output.ali
+W polyorb_hi.periodic_task%s  polyorb_hi-periodic_task.adb  polyorb_hi-periodic_task.ali  EA
+Z polyorb_hi.suspenders%s  polyorb_hi-suspenders.adb  polyorb_hi-suspenders.ali  EA
+W polyorb_hi_generated%s  polyorb_hi_generated.ads  polyorb_hi_generated.ali
+W polyorb_hi_generated.deployment%s  polyorb_hi_generated-deployment.ads  polyorb_hi_generated-deployment.ali
+W polyorb_hi_generated.types%s  polyorb_hi_generated-types.ads  polyorb_hi_generated-types.ali
+W system%s		system.ads		system.ali
+Z system.parameters%s	s-parame.adb		s-parame.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.task_info%s	s-tasinf.adb		s-tasinf.ali
+Z system.tasking%s	s-taskin.adb		s-taskin.ali
+Z system.tasking.stages%s  s-tassta.adb		s-tassta.ali
+
+D ada.ads		20200312110721 76789da1 ada%s
+D a-except.ads		20200312110721 291912d5 ada.exceptions%s
+D a-finali.ads		20200312110721 bf4f806b ada.finalization%s
+D a-reatim.ads		20200312110721 0240fc73 ada.real_time%s
+D a-retide.ads		20200312110721 081cdaa4 ada.real_time.delays%s
+D a-tags.ads		20200312110721 491b781d ada.tags%s
+D a-unccon.ads		20200312110721 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20200312110721 5ab55268 interfaces%s
+D i-c.ads		20200312110721 5421119b interfaces.c%s
+D polyorb_hi.ads	20170204221544 f77a07a6 polyorb_hi%s
+D polyorb_hi-errors.ads	20170204221544 6deb16d4 polyorb_hi.errors%s
+D polyorb_hi-marshallers_g.ads  20170204221544 77d4e337 polyorb_hi.marshallers_g%s
+D polyorb_hi-messages.ads  20170204221544 cdc9ec9c polyorb_hi.messages%s
+D polyorb_hi-output.ads	20170204221544 c612b385 polyorb_hi.output%s
+D polyorb_hi-periodic_task.ads  20170204221544 99ad09d9 polyorb_hi.periodic_task%s
+D polyorb_hi-periodic_task.adb  20170204221544 94a22a7a polyorb_hi.periodic_task%b
+D polyorb_hi-port_kinds.ads  20170204221544 d9856456 polyorb_hi.port_kinds%s
+D polyorb_hi-port_type_marshallers.ads  20170204221544 82fe6eb4 polyorb_hi.port_type_marshallers%s
+D polyorb_hi-streams.ads  20170204221544 54018470 polyorb_hi.streams%s
+D polyorb_hi-suspenders.ads  20170204221544 eb2f55ee polyorb_hi.suspenders%s
+D polyorb_hi-thread_interrogators.ads  20170204221544 3009acee polyorb_hi.thread_interrogators%s
+D polyorb_hi-thread_interrogators.adb  20170204221544 1e2a3354 polyorb_hi.thread_interrogators%b
+D polyorb_hi-time_marshallers.ads  20170204221544 5d51f498 polyorb_hi.time_marshallers%s
+D polyorb_hi-unprotected_queue.ads  20170204221544 21f7ce81 polyorb_hi.unprotected_queue%s
+D polyorb_hi-unprotected_queue.adb  20170204221544 600463f6 polyorb_hi.unprotected_queue%b
+D polyorb_hi-utils.ads	20170204221544 4a2646a8 polyorb_hi.utils%s
+D polyorb_hi_generated.ads  20170204221544 32a22d97 polyorb_hi_generated%s
+D polyorb_hi_generated-activity.ads  20210626155240 d78dd711 polyorb_hi_generated.activity%s
+D polyorb_hi_generated-activity.adb  20210626155240 95e6bd98 polyorb_hi_generated.activity%b
+D polyorb_hi_generated-deployment.ads  20210626155240 1f1a4043 polyorb_hi_generated.deployment%s
+D polyorb_hi_generated-marshallers.ads  20210626155240 6729bf2c polyorb_hi_generated.marshallers%s
+D polyorb_hi_generated-subprograms.ads  20210626155240 63b8861a polyorb_hi_generated.subprograms%s
+D polyorb_hi_generated-transport.ads  20210626155240 cc5413ce polyorb_hi_generated.transport%s
+D polyorb_hi_generated-types.ads  20210626155240 60dc51fb polyorb_hi_generated.types%s
+D system.ads		20200312110721 4635ec04 system%s
+D s-atacco.ads		20200312110721 4c36d12f system.address_to_access_conversions%s
+D s-assert.ads		20200312110721 cd8d2c94 system.assertions%s
+D s-exctab.ads		20200312110721 54135002 system.exception_table%s
+D s-finroo.ads		20200312110721 4ff27390 system.finalization_root%s
+D s-imgint.ads		20200312110721 02dbe0c2 system.img_int%s
+D s-linux.ads		20200312110721 ed0b8aee system.linux%s
+D s-multip.ads		20200312110721 38ac9f73 system.multiprocessors%s
+D s-oscons.ads		20200808120453 0b994636 system.os_constants%s
+D s-osinte.ads		20200312110721 710cf8c6 system.os_interface%s
+D s-parame.ads		20200312110721 48ec542b system.parameters%s
+D s-secsta.ads		20200312110721 20bbe636 system.secondary_stack%s
+D s-soflin.ads		20200312110721 a7318a92 system.soft_links%s
+D s-stache.ads		20200312110721 a37c21ec system.stack_checking%s
+D s-stausa.ads		20200312110721 017a0a05 system.stack_usage%s
+D s-stalib.ads		20200312110721 09bd3940 system.standard_library%s
+D s-stoele.ads		20200312110721 2dc34a04 system.storage_elements%s
+D s-tasinf.ads		20200312110721 2b3f8252 system.task_info%s
+D s-taspri.ads		20200312110721 f40ac08d system.task_primitives%s
+D s-taprop.ads		20200312110721 1dd2e1b6 system.task_primitives.operations%s
+D s-taskin.ads		20200312110721 b9d612e2 system.tasking%s
+D s-taprob.ads		20200312110721 acd6094d system.tasking.protected_objects%s
+D s-tpoben.ads		20200312110721 60ad3dae system.tasking.protected_objects.entries%s
+D s-tpobop.ads		20200312110721 5f548bb3 system.tasking.protected_objects.operations%s
+D s-tassta.ads		20200312110721 cca55c94 system.tasking.stages%s
+D s-traent.ads		20200312110721 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20200312110721 34867c83 system.unsigned_types%s
+D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/native.adc  20170204221544 00000000
+D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/gnat.adc  20170204221544 00000000
+X 1 ada.ads
+16K9*Ada 20e8 28|12r6 72r11 82r18 83r7 98r22 100r24 180r11 190r18 191r7 206r22
+. 208r24 267r11 277r18 278r7 293r22 295r24 354r11 364r18 365r7 380r22 382r24
+. 444r11 454r18 455r7 470r22 472r24 531r11 541r18 542r7 557r22 559r24 29|1334r11
+. 1374r18 1375r7 1528r11 1568r18 1569r7 1722r11 1762r18 1763r7 1916r11 1956r18
+. 1957r7 2110r11 2150r18 2151r7 2304r11 2344r18 2345r7
+X 4 a-reatim.ads
+39K13*Real_Time 185e18 28|12w10 72r15 82r22 83r11 98r26 100r28 180r15 190r22
+. 191r11 206r26 208r28 267r15 277r22 278r11 293r26 295r28 354r15 364r22 365r11
+. 380r26 382r28 444r15 454r22 455r11 470r26 472r28 531r15 541r22 542r11 557r26
+. 559r28 29|1334r15 1374r22 1375r11 1528r15 1568r22 1569r11 1722r15 1762r22
+. 1763r11 1916r15 1956r22 1957r11 2110r15 2150r22 2151r11 2304r15 2344r22
+. 2345r11
+49O9*Time<duration> 28|72r25 82r32 180r25 190r32 267r25 277r32 354r25 364r32
+. 444r25 454r32 531r25 541r32 29|1334r25 1374r32 1528r25 1568r32 1722r25
+. 1762r32 1916r25 1956r32 2110r25 2150r32 2304r25 2344r32
+54O9*Time_Span<duration>
+61V13*Clock{49O9} 28|83s21 191s21 278s21 365s21 455s21 542s21 29|1375s21
+. 1569s21 1763s21 1957s21 2151s21 2345s21
+119V13*Milliseconds{54O9} 28|98s36 100s38 206s36 208s38 293s36 295s38 380s36
+. 382s38 470s36 472s38 557s36 559s38
+X 10 polyorb_hi.ads
+35K9*PolyORB_HI 39e15 28|10r6 13r6 44r11 93r46 96r8 152r11 201r47 204r8 239r11
+. 288r45 291r8 326r11 375r51 378r8 416r11 465r45 468r8 503r11 552r43 555r8
+. 29|9r6 12r6 26r9 45r9 51r6 53r6 77r6 79r6 112r8 141r46 144r15 145r14 173r10
+. 189r9 205r9 211r6 213r6 215r6 217r6 219r6 221r6 223r6 225r6 227r6 300r6
+. 302r6 304r6 306r6 308r6 310r6 312r6 314r6 316r6 382r8 411r47 421r15 422r14
+. 499r10 507r10 515r10 523r10 531r10 539r10 555r9 571r9 577r6 579r6 603r6
+. 605r6 638r8 667r45 670r15 671r14 699r10 715r9 731r9 737r6 739r6 763r6 765r6
+. 789r8 818r51 821r15 822r14 850r10 866r9 882r9 888r6 890r6 892r6 923r6 925r6
+. 927r6 966r8 995r45 999r15 1000r14 1033r10 1041r10 1057r9 1073r9 1079r6
+. 1081r6 1105r6 1107r6 1140r8 1169r43 1172r15 1173r14 1201r10 1216r11 1410r11
+. 1604r11 1798r11 1992r11 2186r11
+X 11 polyorb_hi-errors.ads
+32K20*Errors 39e22 28|10w17 44r22 93r57 152r22 201r58 239r22 288r56 326r22
+. 375r62 416r22 465r56 503r22 552r54 29|141r57 144r26 145r25 173r21 411r58
+. 421r26 422r25 499r21 507r21 515r21 523r21 531r21 539r21 667r56 670r26 671r25
+. 699r21 818r62 821r26 822r25 850r21 995r56 999r26 1000r25 1033r21 1041r21
+. 1169r54 1172r26 1173r25 1201r21 1216r22 1410r22 1604r22 1798r22 1992r22
+. 2186r22
+34E9*Error_Kind 37e7 28|44r29 93r64 152r29 201r65 239r29 288r63 326r29 375r69
+. 416r29 465r63 503r29 552r61 29|141r64 144r33 145r32 411r65 421r33 422r32
+. 667r63 670r33 671r32 818r69 821r33 822r32 995r63 999r33 1000r32 1169r61
+. 1172r33 1173r32 1216r29 1410r29 1604r29 1798r29 1992r29 2186r29
+35n7*Error_None{34E9} 29|173r28 499r28 507r28 515r28 523r28 531r28 539r28
+. 699r28 850r28 1033r28 1041r28 1201r28
+X 15 polyorb_hi-periodic_task.ads
+40e4 Entity{30|60E8} 28|97r7 205r7 292r7 379r7 469r7 556r7
+47o4 Task_Period{4|54O9} 28|98r7 206r7 293r7 380r7 470r7 557r7
+50o4 Task_Deadline{4|54O9} 28|100r7 208r7 295r7 382r7 472r7 559r7
+53i4 Task_Priority{35|108I12} 28|102r7 210r7 297r7 384r7 474r7 561r7
+56i4 Task_Stack_Size{natural} 28|103r7 211r7 298r7 385r7 475r7 562r7
+59V18 Job{11|34E9} 28|104r7 212r7 299r7 386r7 476r7 563r7
+70k20*Periodic_Task 80e29 28|13w17 14r34 96r19 204r19 291r19 378r19 468r19
+. 555r19
+77V13*Next_Deadline{4|49O9} 29|133r52[28|95] 403r53[28|203] 659r51[28|290]
+. 810r57[28|377] 987r51[28|467] 1161r49[28|554]
+X 17 polyorb_hi-port_kinds.ads
+35K20*Port_Kinds 66e26 29|9w17 26r20 45r20 51r17 53r17 77r17 79r17 189r20
+. 205r20 211r17 213r17 215r17 217r17 219r17 221r17 223r17 225r17 227r17 300r17
+. 302r17 304r17 306r17 308r17 310r17 312r17 314r17 316r17 555r20 571r20 577r17
+. 579r17 603r17 605r17 715r20 731r20 737r17 739r17 763r17 765r17 866r20 882r20
+. 888r17 890r17 892r17 923r17 925r17 927r17 1057r20 1073r20 1079r17 1081r17
+. 1105r17 1107r17
+37E9*Port_Kind 46e21 29|26r31 189r31 555r31 715r31 866r31 1057r31
+40n7*In_Data_Port{37E9} 29|51r28 211r28 213r28 225r28 577r28 737r28 888r28
+. 1079r28
+46n7*Out_Data_Port{37E9} 29|53r28 215r28 217r28 219r28 221r28 223r28 227r28
+. 579r28 739r28 890r28 892r28 1081r28
+48E9*Overflow_Handling_Protocol 51e13 29|45r31 205r31 571r31 731r31 882r31
+. 1073r31
+49n7*DropOldest{48E9} 29|77r28 79r28 300r28 302r28 304r28 306r28 308r28 310r28
+. 312r28 314r28 316r28 603r28 605r28 763r28 765r28 923r28 925r28 927r28 1105r28
+. 1107r28
+X 21 polyorb_hi-thread_interrogators.ads
+47E9 Port_Type 29|113r7 383r7 639r7 790r7 967r7 1141r7
+51A9 Integer_Array(integer)<47E9> 29|114r7 384r7 640r7 791r7 968r7 1142r7
+54A9 Port_Kind_Array(17|37E9)<47E9> 29|115r7 385r7 641r7 792r7 969r7 1143r7
+57A9 Port_Image_Array(30|275A11)<47E9> 29|116r7 386r7 642r7 793r7 970r7 1144r7
+61A9 Address_Array(35|67M9)<47E9> 29|117r7 387r7 643r7 794r7 971r7 1145r7
+64A9 Overflow_Protocol_Array(17|48E9)<47E9> 29|118r7 388r7 644r7 795r7 972r7
+. 1146r7
+68+9 Thread_Interface_Type 29|119r7 389r7 645r7 796r7 973r7 1147r7
+73e4 Current_Entity{30|60E8} 29|120r7 390r7 646r7 797r7 974r7 1148r7
+77*4 Thread_Port_Kinds{54A9} 29|121r7 391r7 647r7 798r7 975r7 1149r7
+81b4 Has_Event_Ports{boolean} 29|122r7 392r7 648r7 799r7 976r7 1150r7
+84*4 Thread_Port_Images{57A9} 29|123r7 393r7 649r7 800r7 977r7 1151r7
+87*4 Thread_Fifo_Sizes{51A9} 29|124r7 394r7 650r7 801r7 978r7 1152r7
+96*4 Thread_Fifo_Offsets{51A9} 29|125r7 395r7 651r7 802r7 979r7 1153r7
+105*4 Thread_Overflow_Protocols{64A9} 29|126r7 396r7 652r7 803r7 980r7 1154r7
+109*4 Urgencies{51A9} 29|127r7 397r7 653r7 804r7 981r7 1155r7
+113i4 Global_Data_Queue_Size{integer} 29|128r7 398r7 654r7 805r7 982r7 1156r7
+119*4 N_Destinations{51A9} 29|129r7 399r7 655r7 806r7 983r7 1157r7
+124*4 Destinations{61A9} 29|130r7 400r7 656r7 807r7 984r7 1158r7
+129U19 Marshall 29|131r7 401r7 657r7 808r7 985r7 1159r7
+134V18 Send{11|34E9} 29|132r7 402r7 658r7 809r7 986r7 1160r7
+141V18 Next_Deadline{4|49O9} 29|133r7 403r7 659r7 810r7 987r7 1161r7
+145k20*Thread_Interrogators 205e36 29|12w17 13r34 112r19 382r19 638r19 789r19
+. 966r19 1140r19
+147V13*Send_Output{11|34E9} 29|170s43[111] 496s44[381] 504s44[381] 512s44[381]
+. 520s44[381] 528s44[381] 536s44[381] 696s42[637] 847s48[788] 1030s42[965]
+. 1038s42[965] 1198s40[1139] 1222s49[111] 1416s50[381] 1610s48[637] 1804s54[788]
+. 1998s48[965] 2192s46[1139]
+151U14*Put_Value 29|164s42[111] 470s43[381] 474s43[381] 478s43[381] 482s43[381]
+. 486s43[381] 490s43[381] 690s41[637] 841s47[788] 1020s41[965] 1024s41[965]
+. 1192s39[1139] 1238s42[111] 1432s43[381] 1626s41[637] 1820s47[788] 2014s41[965]
+. 2208s39[1139]
+156U14*Receive_Input 29|1254s42[111] 1448s43[381] 1642s41[637] 1836s47[788]
+. 2030s41[965] 2224s39[1139]
+162V13*Get_Value{28|25R8} 29|153s45[111] 430s46[381] 441s46[381] 452s46[381]
+. 679s44[637] 830s50[788] 1008s44[965] 1181s42[1139] 1274s49[111] 1468s50[381]
+. 1662s48[637] 1856s54[788] 2050s48[965] 2244s46[1139]
+168V13*Get_Sender{30|60E8} 29|1297s49[111] 1491s50[381] 1685s48[637] 1879s54[788]
+. 2073s48[965] 2267s46[1139]
+176V13*Get_Count{integer} 29|148s46[111] 425s47[381] 436s47[381] 447s47[381]
+. 674s45[637] 825s51[788] 1003s45[965] 1176s43[1139] 1320s49[111] 1514s50[381]
+. 1708s48[637] 1902s54[788] 2096s48[965] 2290s46[1139]
+181U14*Next_Value 29|1362s42[111] 1556s43[381] 1750s41[637] 1944s47[788]
+. 2138s41[965] 2332s39[1139]
+184U14*Wait_For_Incoming_Events 29|1399s42[111] 1593s43[381] 1787s41[637]
+. 1981s47[788] 2175s41[965] 2369s39[1139]
+192U14*Store_Received_Message 29|1381s42[111] 1575s43[381] 1769s41[637] 1963s47[788]
+. 2157s41[965] 2351s39[1139]
+202V13*Get_Time_Stamp{4|49O9} 29|1343s49[111] 1537s50[381] 1731s48[637] 1925s54[788]
+. 2119s48[965] 2313s46[1139]
+X 27 polyorb_hi_generated.ads
+34K9*PolyORB_HI_Generated 38e25 28|9r6 11r6 17r9 31r28 33r29 42r14 47r14
+. 51r14 55r14 60r14 62r11 65r14 70r14 75r14 79r14 81r12 86r14 97r17 125r39
+. 127r28 129r29 131r28 133r27 135r28 137r28 139r26 141r27 150r14 155r14 159r14
+. 163r14 168r14 170r11 173r14 178r14 183r14 187r14 189r12 194r14 205r17 226r28
+. 228r29 237r14 242r14 246r14 250r14 255r14 257r11 260r14 265r14 270r14 274r14
+. 276r12 281r14 292r17 313r28 315r29 324r14 329r14 333r14 337r14 342r14 344r11
+. 347r14 352r14 357r14 361r14 363r12 368r14 379r17 401r27 403r28 405r39 414r14
+. 419r14 423r14 427r14 432r14 434r11 437r14 442r14 447r14 451r14 453r12 458r14
+. 469r17 490r28 492r29 501r14 506r14 510r14 514r14 519r14 521r11 524r14 529r14
+. 534r14 538r14 540r12 545r14 556r17 565r5 29|10r6 11r6 14r6 16r14 29r23
+. 57r6 58r9 60r6 61r9 92r9 97r8 120r25 131r19 132r15 142r19 143r20 157r8
+. 160r5 231r6 232r9 234r6 235r9 237r6 238r9 240r6 241r9 243r6 244r9 246r6
+. 247r9 249r6 250r9 252r6 253r9 255r6 256r9 390r25 401r19 402r15 412r30 413r19
+. 414r17 415r20 416r19 417r18 418r19 419r19 420r18 434r8 445r8 456r8 459r5
+. 583r6 584r9 586r6 587r9 618r9 623r8 646r25 657r19 658r15 668r19 669r20
+. 683r8 686r5 743r6 744r9 746r6 747r9 797r25 808r19 809r15 819r19 820r20
+. 834r8 837r5 896r6 897r9 899r6 900r9 902r6 903r9 942r9 947r8 974r25 985r19
+. 986r15 996r18 997r19 998r30 1012r8 1015r5 1085r6 1086r9 1088r6 1089r9 1120r9
+. 1125r8 1148r25 1159r19 1160r15 1170r19 1171r20 1185r8 1188r5 1214r14 1218r9
+. 1231r14 1234r9 1247r14 1250r9 1263r14 1267r9 1286r14 1288r11 1290r9 1309r14
+. 1313r9 1332r14 1336r9 1355r14 1358r9 1371r14 1373r12 1377r9 1392r14 1395r9
+. 1408r14 1412r9 1425r14 1428r9 1441r14 1444r9 1457r14 1461r9 1480r14 1482r11
+. 1484r9 1503r14 1507r9 1526r14 1530r9 1549r14 1552r9 1565r14 1567r12 1571r9
+. 1586r14 1589r9 1602r14 1606r9 1619r14 1622r9 1635r14 1638r9 1651r14 1655r9
+. 1674r14 1676r11 1678r9 1697r14 1701r9 1720r14 1724r9 1743r14 1746r9 1759r14
+. 1761r12 1765r9 1780r14 1783r9 1796r14 1800r9 1813r14 1816r9 1829r14 1832r9
+. 1845r14 1849r9 1868r14 1870r11 1872r9 1891r14 1895r9 1914r14 1918r9 1937r14
+. 1940r9 1953r14 1955r12 1959r9 1974r14 1977r9 1990r14 1994r9 2007r14 2010r9
+. 2023r14 2026r9 2039r14 2043r9 2062r14 2064r11 2066r9 2085r14 2089r9 2108r14
+. 2112r9 2131r14 2134r9 2147r14 2149r12 2153r9 2168r14 2171r9 2184r14 2188r9
+. 2201r14 2204r9 2217r14 2220r9 2233r14 2237r9 2256r14 2258r11 2260r9 2279r14
+. 2283r9 2302r14 2306r9 2325r14 2328r9 2341r14 2343r12 2347r9 2362r14 2365r9
+. 2373r5
+X 28 polyorb_hi_generated-activity.ads
+17K30*Activity 27|34k9 28|565l26 565e34 29|16b35 2373l26 2373t34
+21E8*syst_ReadMotion_impl_Port_Type 23e16 26r12 26r46 43r12 52r12 56r12 61r12
+. 66r12 71r12 76r12 87r16 29|21r11 25r11 36r11 40r11 44r11 113r20 1215r12
+. 1248r12 1264r12 1287r12 1310r12 1333r12 1356r12 1393r16
+22n5*motion_in{21E8} 30r14 29|50r5 56r5 64r5 70r5 76r5 82r5 100r5 106r5 149r7
+. 154r11
+23n5*motion_out{21E8} 32r14 29|52r5 59r5 66r5 72r5 78r5 84r5 102r5 108r5
+. 166r17 171r9
+25R8*syst_ReadMotion_impl_Interface 26d5 39e15 48r24 57r11 80r24 29|119r32
+. 165r7 1232r24 1265r11 1372r24
+26e5*Port{21E8} 29r12 29|166m9
+31i11*motion_in_DATA{34|12I8} 29|154r22
+33i11*motion_out_DATA{34|12I8} 29|167m9
+41V12*Send_Output{11|34E9} 42>5 43>5 29|1213b12 1224l7 1224t18
+42e5 Entity{30|60E8} 29|1214b5 1220r7
+43e5 Port{21E8} 29|1215b5 1223r7
+46U13*Put_Value 47>5 48>5 29|1230b13 1240l7 1240t16
+47e5 Entity{30|60E8} 29|1231b5 1236r7
+48r5 Thread_Interface{25R8} 29|1232b5 1239r7
+50U13*Receive_Input 51>5 52>5 29|1246b13 1256l7 1256t20
+51e5 Entity{30|60E8} 29|1247b5 1252r7
+52e5 Port{21E8} 29|1248b5 1255r7
+54V12*Get_Value{25R8} 55>5 56>5 29|1262b12 1279l7 1279t16
+55e5 Entity{30|60E8} 29|1263b5 1269r7
+56e5 Port{21E8} 29|1264b5 1275r7
+59V12*Get_Sender{30|60E8} 60>5 61>5 29|1285b12 1302l7 1302t17
+60e5 Entity{30|60E8} 29|1286b5 1292r7
+61e5 Port{21E8} 29|1287b5 1298r7
+64V12*Get_Count{integer} 65>5 66>5 29|1308b12 1325l7 1325t16
+65e5 Entity{30|60E8} 29|1309b5 1315r7
+66e5 Port{21E8} 29|1310b5 1321r7
+69V12*Get_Time_Stamp{4|49O9} 70>5 71>5 29|1331b12 1348l7 1348t21
+70e5 Entity{30|60E8} 29|1332b5 1338r7
+71e5 Port{21E8} 29|1333b5 1344r7
+74U13*Next_Value 75>5 76>5 29|1354b13 1364l7 1364t17
+75e5 Entity{30|60E8} 29|1355b5 1360r7
+76e5 Port{21E8} 29|1356b5 1363r7
+78U13*Store_Received_Message 79>5 80>5 81>5 82>5 29|1370b13 1385l7 1385t29
+79e5 Entity{30|60E8} 29|1371b5 1379r7
+80r5 Thread_Interface{25R8} 29|1372b5 1382r7
+81e5 From{30|60E8} 29|1373b5 1383r7
+82o5 Time_Stamp{4|49O9} 29|1374b5 1384r7
+85U13*Wait_For_Incoming_Events 86>5 87<5 29|1391b13 1401l7 1401t31
+86e5 Entity{30|60E8} 29|1392b5 1397r7
+87e5 Port{21E8} 29|1393b5 1400m7
+93V12*syst_the_thread_motion_Job{11|34E9} 104r14 29|141b12 179l7 179t33
+95K11*syst_the_thread_motion_Task[15|70] 29|133r24
+108E8*syst_ControlRules_impl_Port_Type 117e14 120r12 120r48 151r12 160r12
+. 164r12 169r12 174r12 179r12 184r12 195r16 29|184r11 188r11 196r11 200r11
+. 204r11 383r20 1409r12 1442r12 1458r12 1481r12 1504r12 1527r12 1550r12 1587r16
+109n5*video_not_recognized{108E8} 124r14 29|210r5 230r5 259r5 279r5 299r5
+. 319r5 342r5 362r5 426r7 431r11
+110n5*motion_in{108E8} 126r14 29|212r5 233r5 261r5 281r5 301r5 321r5 344r5
+. 364r5 437r7 442r11
+111n5*camera_out{108E8} 128r14 29|214r5 236r5 263r5 283r5 303r5 323r5 346r5
+. 366r5 472r17 497r9
+112n5*light_out{108E8} 130r14 29|216r5 239r5 265r5 285r5 305r5 325r5 348r5
+. 368r5 476r17 505r9
+113n5*heat_out{108E8} 132r14 29|218r5 242r5 267r5 287r5 307r5 327r5 350r5
+. 370r5 480r17 513r9
+114n5*music_out{108E8} 134r14 29|220r5 245r5 269r5 289r5 309r5 329r5 352r5
+. 372r5 484r17 521r9
+115n5*alarm_out{108E8} 136r14 29|222r5 248r5 271r5 291r5 311r5 331r5 354r5
+. 374r5 488r17 529r9
+116n5*gate_in{108E8} 138r14 29|224r5 251r5 273r5 293r5 313r5 333r5 356r5
+. 376r5 448r7 453r11
+117n5*gate_out{108E8} 140r14 29|226r5 254r5 275r5 295r5 315r5 335r5 358r5
+. 378r5 492r17 537r9
+119R8*syst_ControlRules_impl_Interface 120d5 147e15 156r24 165r11 188r24
+. 29|389r32 471r7 475r7 479r7 483r7 487r7 491r7 1426r24 1459r11 1566r24
+120e5*Port{108E8} 123r12 29|472m9 476m9 480m9 484m9 488m9 492m9
+125i11*video_not_recognized_DATA{34|12I8} 29|431r33
+127i11*motion_in_DATA{34|12I8} 29|442r22
+129i11*camera_out_DATA{34|12I8} 29|473m9
+131i11*light_out_DATA{34|12I8} 29|477m9
+133i11*heat_out_DATA{34|12I8} 29|481m9
+135i11*music_out_DATA{34|12I8} 29|485m9
+137i11*alarm_out_DATA{34|12I8} 29|489m9
+139i11*gate_in_DATA{34|12I8} 29|453r20
+141i11*gate_out_DATA{34|12I8} 29|493m9
+149V12*Send_Output{11|34E9} 150>5 151>5 29|1407b12 1418l7 1418t18
+150e5 Entity{30|60E8} 29|1408b5 1414r7
+151e5 Port{108E8} 29|1409b5 1417r7
+154U13*Put_Value 155>5 156>5 29|1424b13 1434l7 1434t16
+155e5 Entity{30|60E8} 29|1425b5 1430r7
+156r5 Thread_Interface{119R8} 29|1426b5 1433r7
+158U13*Receive_Input 159>5 160>5 29|1440b13 1450l7 1450t20
+159e5 Entity{30|60E8} 29|1441b5 1446r7
+160e5 Port{108E8} 29|1442b5 1449r7
+162V12*Get_Value{119R8} 163>5 164>5 29|1456b12 1473l7 1473t16
+163e5 Entity{30|60E8} 29|1457b5 1463r7
+164e5 Port{108E8} 29|1458b5 1469r7
+167V12*Get_Sender{30|60E8} 168>5 169>5 29|1479b12 1496l7 1496t17
+168e5 Entity{30|60E8} 29|1480b5 1486r7
+169e5 Port{108E8} 29|1481b5 1492r7
+172V12*Get_Count{integer} 173>5 174>5 29|1502b12 1519l7 1519t16
+173e5 Entity{30|60E8} 29|1503b5 1509r7
+174e5 Port{108E8} 29|1504b5 1515r7
+177V12*Get_Time_Stamp{4|49O9} 178>5 179>5 29|1525b12 1542l7 1542t21
+178e5 Entity{30|60E8} 29|1526b5 1532r7
+179e5 Port{108E8} 29|1527b5 1538r7
+182U13*Next_Value 183>5 184>5 29|1548b13 1558l7 1558t17
+183e5 Entity{30|60E8} 29|1549b5 1554r7
+184e5 Port{108E8} 29|1550b5 1557r7
+186U13*Store_Received_Message 187>5 188>5 189>5 190>5 29|1564b13 1579l7 1579t29
+187e5 Entity{30|60E8} 29|1565b5 1573r7
+188r5 Thread_Interface{119R8} 29|1566b5 1576r7
+189e5 From{30|60E8} 29|1567b5 1577r7
+190o5 Time_Stamp{4|49O9} 29|1568b5 1578r7
+193U13*Wait_For_Incoming_Events 194>5 195<5 29|1585b13 1595l7 1595t31
+194e5 Entity{30|60E8} 29|1586b5 1591r7
+195e5 Port{108E8} 29|1587b5 1594m7
+201V12*syst_the_thread_control_Job{11|34E9} 212r14 29|411b12 545l7 545t34
+203K11*syst_the_thread_control_Task[15|70] 29|403r24
+216E8*syst_AwakeMotion_impl_Port_Type 218e16 221r12 221r47 238r12 247r12
+. 251r12 256r12 261r12 266r12 271r12 282r16 29|550r11 554r11 562r11 566r11
+. 570r11 639r20 1603r12 1636r12 1652r12 1675r12 1698r12 1721r12 1744r12 1781r16
+217n5*motion_in{216E8} 225r14 29|576r5 582r5 590r5 596r5 602r5 608r5 626r5
+. 632r5 675r7 680r11
+218n5*motion_out{216E8} 227r14 29|578r5 585r5 592r5 598r5 604r5 610r5 628r5
+. 634r5 692r17 697r9
+220R8*syst_AwakeMotion_impl_Interface 221d5 234e15 243r24 252r11 275r24 29|645r32
+. 691r7 1620r24 1653r11 1760r24
+221e5*Port{216E8} 224r12 29|692m9
+226i11*motion_in_DATA{34|12I8} 29|680r22
+228i11*motion_out_DATA{34|12I8} 29|693m9
+236V12*Send_Output{11|34E9} 237>5 238>5 29|1601b12 1612l7 1612t18
+237e5 Entity{30|60E8} 29|1602b5 1608r7
+238e5 Port{216E8} 29|1603b5 1611r7
+241U13*Put_Value 242>5 243>5 29|1618b13 1628l7 1628t16
+242e5 Entity{30|60E8} 29|1619b5 1624r7
+243r5 Thread_Interface{220R8} 29|1620b5 1627r7
+245U13*Receive_Input 246>5 247>5 29|1634b13 1644l7 1644t20
+246e5 Entity{30|60E8} 29|1635b5 1640r7
+247e5 Port{216E8} 29|1636b5 1643r7
+249V12*Get_Value{220R8} 250>5 251>5 29|1650b12 1667l7 1667t16
+250e5 Entity{30|60E8} 29|1651b5 1657r7
+251e5 Port{216E8} 29|1652b5 1663r7
+254V12*Get_Sender{30|60E8} 255>5 256>5 29|1673b12 1690l7 1690t17
+255e5 Entity{30|60E8} 29|1674b5 1680r7
+256e5 Port{216E8} 29|1675b5 1686r7
+259V12*Get_Count{integer} 260>5 261>5 29|1696b12 1713l7 1713t16
+260e5 Entity{30|60E8} 29|1697b5 1703r7
+261e5 Port{216E8} 29|1698b5 1709r7
+264V12*Get_Time_Stamp{4|49O9} 265>5 266>5 29|1719b12 1736l7 1736t21
+265e5 Entity{30|60E8} 29|1720b5 1726r7
+266e5 Port{216E8} 29|1721b5 1732r7
+269U13*Next_Value 270>5 271>5 29|1742b13 1752l7 1752t17
+270e5 Entity{30|60E8} 29|1743b5 1748r7
+271e5 Port{216E8} 29|1744b5 1751r7
+273U13*Store_Received_Message 274>5 275>5 276>5 277>5 29|1758b13 1773l7 1773t29
+274e5 Entity{30|60E8} 29|1759b5 1767r7
+275r5 Thread_Interface{220R8} 29|1760b5 1770r7
+276e5 From{30|60E8} 29|1761b5 1771r7
+277o5 Time_Stamp{4|49O9} 29|1762b5 1772r7
+280U13*Wait_For_Incoming_Events 281>5 282<5 29|1779b13 1789l7 1789t31
+281e5 Entity{30|60E8} 29|1780b5 1785r7
+282e5 Port{216E8} 29|1781b5 1788m7
+288V12*syst_the_thread_awake_Job{11|34E9} 299r14 29|667b12 705l7 705t32
+290K11*syst_the_thread_awake_Task[15|70] 29|659r24
+303E8*syst_AwakeRules_impl_Port_Type 305e16 308r12 308r46 325r12 334r12 338r12
+. 343r12 348r12 353r12 358r12 369r16 29|710r11 714r11 722r11 726r11 730r11
+. 790r20 1797r12 1830r12 1846r12 1869r12 1892r12 1915r12 1938r12 1975r16
+304n5*motion_in{303E8} 312r14 29|736r5 742r5 750r5 756r5 762r5 768r5 777r5
+. 783r5 826r7 831r11
+305n5*coffee_out{303E8} 314r14 29|738r5 745r5 752r5 758r5 764r5 770r5 779r5
+. 785r5 843r17 848r9
+307R8*syst_AwakeRules_impl_Interface 308d5 321e15 330r24 339r11 362r24 29|796r32
+. 842r7 1814r24 1847r11 1954r24
+308e5*Port{303E8} 311r12 29|843m9
+313i11*motion_in_DATA{34|12I8} 29|831r22
+315i11*coffee_out_DATA{34|12I8} 29|844m9
+323V12*Send_Output{11|34E9} 324>5 325>5 29|1795b12 1806l7 1806t18
+324e5 Entity{30|60E8} 29|1796b5 1802r7
+325e5 Port{303E8} 29|1797b5 1805r7
+328U13*Put_Value 329>5 330>5 29|1812b13 1822l7 1822t16
+329e5 Entity{30|60E8} 29|1813b5 1818r7
+330r5 Thread_Interface{307R8} 29|1814b5 1821r7
+332U13*Receive_Input 333>5 334>5 29|1828b13 1838l7 1838t20
+333e5 Entity{30|60E8} 29|1829b5 1834r7
+334e5 Port{303E8} 29|1830b5 1837r7
+336V12*Get_Value{307R8} 337>5 338>5 29|1844b12 1861l7 1861t16
+337e5 Entity{30|60E8} 29|1845b5 1851r7
+338e5 Port{303E8} 29|1846b5 1857r7
+341V12*Get_Sender{30|60E8} 342>5 343>5 29|1867b12 1884l7 1884t17
+342e5 Entity{30|60E8} 29|1868b5 1874r7
+343e5 Port{303E8} 29|1869b5 1880r7
+346V12*Get_Count{integer} 347>5 348>5 29|1890b12 1907l7 1907t16
+347e5 Entity{30|60E8} 29|1891b5 1897r7
+348e5 Port{303E8} 29|1892b5 1903r7
+351V12*Get_Time_Stamp{4|49O9} 352>5 353>5 29|1913b12 1930l7 1930t21
+352e5 Entity{30|60E8} 29|1914b5 1920r7
+353e5 Port{303E8} 29|1915b5 1926r7
+356U13*Next_Value 357>5 358>5 29|1936b13 1946l7 1946t17
+357e5 Entity{30|60E8} 29|1937b5 1942r7
+358e5 Port{303E8} 29|1938b5 1945r7
+360U13*Store_Received_Message 361>5 362>5 363>5 364>5 29|1952b13 1967l7 1967t29
+361e5 Entity{30|60E8} 29|1953b5 1961r7
+362r5 Thread_Interface{307R8} 29|1954b5 1964r7
+363e5 From{30|60E8} 29|1955b5 1965r7
+364o5 Time_Stamp{4|49O9} 29|1956b5 1966r7
+367U13*Wait_For_Incoming_Events 368>5 369<5 29|1973b13 1983l7 1983t31
+368e5 Entity{30|60E8} 29|1974b5 1979r7
+369e5 Port{303E8} 29|1975b5 1982m7
+375V12*syst_the_thread_awake_rules_Job{11|34E9} 386r14 29|818b12 856l7 856t38
+377K11*syst_the_thread_awake_rules_Task[15|70] 29|810r24
+390E8*syst_ProcessVideo_impl_Port_Type 393e26 396r12 396r48 415r12 424r12
+. 428r12 433r12 438r12 443r12 448r12 459r16 29|861r11 865r11 873r11 877r11
+. 881r11 967r20 1991r12 2024r12 2040r12 2063r12 2086r12 2109r12 2132r12 2169r16
+391n5*video_in{390E8} 400r14 29|887r5 895r5 906r5 914r5 922r5 930r5 950r5
+. 958r5 1004r7 1009r11
+392n5*video_out{390E8} 402r14 29|889r5 898r5 908r5 916r5 924r5 932r5 952r5
+. 960r5 1022r17 1031r9
+393n5*video_not_recognized{390E8} 404r14 29|891r5 901r5 910r5 918r5 926r5
+. 934r5 954r5 962r5 1026r17 1039r9
+395R8*syst_ProcessVideo_impl_Interface 396d5 411e15 420r24 429r11 452r24
+. 29|973r32 1021r7 1025r7 2008r24 2041r11 2148r24
+396e5*Port{390E8} 399r12 29|1022m9 1026m9
+401i11*video_in_DATA{34|12I8} 29|1009r21
+403i11*video_out_DATA{34|12I8} 29|1023m9
+405i11*video_not_recognized_DATA{34|12I8} 29|1027m9
+413V12*Send_Output{11|34E9} 414>5 415>5 29|1989b12 2000l7 2000t18
+414e5 Entity{30|60E8} 29|1990b5 1996r7
+415e5 Port{390E8} 29|1991b5 1999r7
+418U13*Put_Value 419>5 420>5 29|2006b13 2016l7 2016t16
+419e5 Entity{30|60E8} 29|2007b5 2012r7
+420r5 Thread_Interface{395R8} 29|2008b5 2015r7
+422U13*Receive_Input 423>5 424>5 29|2022b13 2032l7 2032t20
+423e5 Entity{30|60E8} 29|2023b5 2028r7
+424e5 Port{390E8} 29|2024b5 2031r7
+426V12*Get_Value{395R8} 427>5 428>5 29|2038b12 2055l7 2055t16
+427e5 Entity{30|60E8} 29|2039b5 2045r7
+428e5 Port{390E8} 29|2040b5 2051r7
+431V12*Get_Sender{30|60E8} 432>5 433>5 29|2061b12 2078l7 2078t17
+432e5 Entity{30|60E8} 29|2062b5 2068r7
+433e5 Port{390E8} 29|2063b5 2074r7
+436V12*Get_Count{integer} 437>5 438>5 29|2084b12 2101l7 2101t16
+437e5 Entity{30|60E8} 29|2085b5 2091r7
+438e5 Port{390E8} 29|2086b5 2097r7
+441V12*Get_Time_Stamp{4|49O9} 442>5 443>5 29|2107b12 2124l7 2124t21
+442e5 Entity{30|60E8} 29|2108b5 2114r7
+443e5 Port{390E8} 29|2109b5 2120r7
+446U13*Next_Value 447>5 448>5 29|2130b13 2140l7 2140t17
+447e5 Entity{30|60E8} 29|2131b5 2136r7
+448e5 Port{390E8} 29|2132b5 2139r7
+450U13*Store_Received_Message 451>5 452>5 453>5 454>5 29|2146b13 2161l7 2161t29
+451e5 Entity{30|60E8} 29|2147b5 2155r7
+452r5 Thread_Interface{395R8} 29|2148b5 2158r7
+453e5 From{30|60E8} 29|2149b5 2159r7
+454o5 Time_Stamp{4|49O9} 29|2150b5 2160r7
+457U13*Wait_For_Incoming_Events 458>5 459<5 29|2167b13 2177l7 2177t31
+458e5 Entity{30|60E8} 29|2168b5 2173r7
+459e5 Port{390E8} 29|2169b5 2176m7
+465V12*syst_the_thread_video_Job{11|34E9} 476r14 29|995b12 1047l7 1047t32
+467K11*syst_the_thread_video_Task[15|70] 29|987r24
+480E8*syst_CarCheck_impl_Port_Type 482e16 485r12 485r44 502r12 511r12 515r12
+. 520r12 525r12 530r12 535r12 546r16 29|1052r11 1056r11 1064r11 1068r11 1072r11
+. 1141r20 2185r12 2218r12 2234r12 2257r12 2280r12 2303r12 2326r12 2363r16
+481n5*motion_in{480E8} 489r14 29|1078r5 1084r5 1092r5 1098r5 1104r5 1110r5
+. 1128r5 1134r5 1177r7 1182r11
+482n5*motion_out{480E8} 491r14 29|1080r5 1087r5 1094r5 1100r5 1106r5 1112r5
+. 1130r5 1136r5 1194r17 1199r9
+484R8*syst_CarCheck_impl_Interface 485d5 498e15 507r24 516r11 539r24 29|1147r32
+. 1193r7 2202r24 2235r11 2342r24
+485e5*Port{480E8} 488r12 29|1194m9
+490i11*motion_in_DATA{34|12I8} 29|1182r22
+492i11*motion_out_DATA{34|12I8} 29|1195m9
+500V12*Send_Output{11|34E9} 501>5 502>5 29|2183b12 2194l7 2194t18
+501e5 Entity{30|60E8} 29|2184b5 2190r7
+502e5 Port{480E8} 29|2185b5 2193r7
+505U13*Put_Value 506>5 507>5 29|2200b13 2210l7 2210t16
+506e5 Entity{30|60E8} 29|2201b5 2206r7
+507r5 Thread_Interface{484R8} 29|2202b5 2209r7
+509U13*Receive_Input 510>5 511>5 29|2216b13 2226l7 2226t20
+510e5 Entity{30|60E8} 29|2217b5 2222r7
+511e5 Port{480E8} 29|2218b5 2225r7
+513V12*Get_Value{484R8} 514>5 515>5 29|2232b12 2249l7 2249t16
+514e5 Entity{30|60E8} 29|2233b5 2239r7
+515e5 Port{480E8} 29|2234b5 2245r7
+518V12*Get_Sender{30|60E8} 519>5 520>5 29|2255b12 2272l7 2272t17
+519e5 Entity{30|60E8} 29|2256b5 2262r7
+520e5 Port{480E8} 29|2257b5 2268r7
+523V12*Get_Count{integer} 524>5 525>5 29|2278b12 2295l7 2295t16
+524e5 Entity{30|60E8} 29|2279b5 2285r7
+525e5 Port{480E8} 29|2280b5 2291r7
+528V12*Get_Time_Stamp{4|49O9} 529>5 530>5 29|2301b12 2318l7 2318t21
+529e5 Entity{30|60E8} 29|2302b5 2308r7
+530e5 Port{480E8} 29|2303b5 2314r7
+533U13*Next_Value 534>5 535>5 29|2324b13 2334l7 2334t17
+534e5 Entity{30|60E8} 29|2325b5 2330r7
+535e5 Port{480E8} 29|2326b5 2333r7
+537U13*Store_Received_Message 538>5 539>5 540>5 541>5 29|2340b13 2355l7 2355t29
+538e5 Entity{30|60E8} 29|2341b5 2349r7
+539r5 Thread_Interface{484R8} 29|2342b5 2352r7
+540e5 From{30|60E8} 29|2343b5 2353r7
+541o5 Time_Stamp{4|49O9} 29|2344b5 2354r7
+544U13*Wait_For_Incoming_Events 545>5 546<5 29|2361b13 2371l7 2371t31
+545e5 Entity{30|60E8} 29|2362b5 2367r7
+546e5 Port{480E8} 29|2363b5 2370m7
+552V12*syst_the_thread_car_Job{11|34E9} 563r14 29|1169b12 1207l7 1207t30
+554K11*syst_the_thread_car_Task[15|70] 29|1161r24
+X 29 polyorb_hi_generated-activity.adb
+20A8 syst_ReadMotion_impl_Integer_Array(integer)<28|21E8> 63r48 69r45 81r47
+. 99r52 114r24
+24A8 syst_ReadMotion_impl_Port_Kind_Array(17|37E9)<28|21E8> 49r48 115r26
+28I11 UT_Activity_The_Controller_1_Max_Port_Image_Size{integer} 33r7 193r7
+. 559r7 719r7 870r7 1061r7
+31A11 UT_Activity_The_Controller_syst_ReadMotion_impl_Port_Image_Array_Component{string}<integer>
+. 37r9
+35A8 syst_ReadMotion_impl_Port_Image_Array(31A11)<28|21E8> 55r49 116r27
+39A8 syst_ReadMotion_impl_Address_Array(35|67M9)<28|21E8> 105r45 117r24
+43A8 syst_ReadMotion_impl_Overflow_Protocol_Array(17|48E9)<28|21E8> 75r56
+. 118r34
+49a3 syst_the_thread_motion_Port_Kinds{24A8} 121r28
+55a3 syst_the_thread_motion_Port_Images{35A8} 123r29
+63a3 syst_the_thread_motion_FIFO_Sizes{20A8} 124r28
+69a3 syst_the_thread_motion_Offsets{20A8} 125r30
+75a3 syst_the_thread_motion_Overflow_Protocols{43A8} 126r36
+81a3 syst_the_thread_motion_Urgencies{20A8} 127r20
+87i3 syst_the_thread_motion_Total_FIFO_Size{integer} 128r33
+90A8 UT_Activity_The_Controller_the_thread_motion_motion_out_Destinations_Array(30|148E8)<integer>
+. 94r56 95r4
+94a3 the_thread_motion_motion_out_Destinations{90A8} 109r6
+99a3 syst_the_thread_motion_N_Destinations{20A8} 129r25
+105a3 the_thread_motion_Destinations{39A8} 130r23
+111K11 syst_the_thread_motion_Interrogators[21|145] 148r9 153r8 164r5 170r6
+. 1222r12 1238r5 1254r5 1274r12 1297r12 1320r12 1343r12 1362r5 1381r5 1399r5
+142i5 motion_in_V{34|12I8} 152m7 156m7 161r24
+143i5 motion_out_V{34|12I8} 162m25 167r28
+144e5 Error_Ü{11|34E9} 169m5 172r9 175r14 178r12
+183A8 syst_ControlRules_impl_Integer_Array(integer)<28|108E8> 258r49 278r46
+. 318r48 341r53 384r24
+187A8 syst_ControlRules_impl_Port_Kind_Array(17|37E9)<28|108E8> 209r49 385r26
+191A11 UT_Activity_The_Controller_syst_ControlRules_impl_Port_Image_Array_Component{string}<integer>
+. 197r9
+195A8 syst_ControlRules_impl_Port_Image_Array(191A11)<28|108E8> 229r50 386r27
+199A8 syst_ControlRules_impl_Address_Array(35|67M9)<28|108E8> 361r46 387r24
+203A8 syst_ControlRules_impl_Overflow_Protocol_Array(17|48E9)<28|108E8> 298r57
+. 388r34
+209a3 syst_the_thread_control_Port_Kinds{187A8} 391r28
+229a3 syst_the_thread_control_Port_Images{195A8} 393r29
+258a3 syst_the_thread_control_FIFO_Sizes{183A8} 394r28
+278a3 syst_the_thread_control_Offsets{183A8} 395r30
+298a3 syst_the_thread_control_Overflow_Protocols{203A8} 396r36
+318a3 syst_the_thread_control_Urgencies{183A8} 397r20
+338i3 syst_the_thread_control_Total_FIFO_Size{integer} 398r33
+341a3 syst_the_thread_control_N_Destinations{183A8} 399r25
+361a3 the_thread_control_Destinations{199A8} 400r23
+381K11 syst_the_thread_control_Interrogators[21|145] 425r9 430r8 436r9 441r8
+. 447r9 452r8 470r5 474r5 478r5 482r5 486r5 490r5 496r6 504r6 512r6 520r6
+. 528r6 536r6 1416r12 1432r5 1448r5 1468r12 1491r12 1514r12 1537r12 1556r5
+. 1575r5 1593r5
+412i5 video_not_recognized_V{34|12I8} 429m7 433m7 461r21
+413i5 motion_in_V{34|12I8} 440m7 444m7 460r24
+414i5 gate_in_V{34|12I8} 451m7 455m7 467r18
+415i5 camera_out_V{34|12I8} 462m21 473r28
+416i5 light_out_V{34|12I8} 463m20 477r27
+417i5 heat_out_V{34|12I8} 464m19 481r26
+418i5 music_out_V{34|12I8} 465m20 485r27
+419i5 alarm_out_V{34|12I8} 466m20 489r27
+420i5 gate_out_V{34|12I8} 468m19 493r26
+421e5 Error_Ü{11|34E9} 495m5 498r9 501r14 503m5 506r9 509r14 511m5 514r9
+. 517r14 519m5 522r9 525r14 527m5 530r9 533r14 535m5 538r9 541r14 544r12
+549A8 syst_AwakeMotion_impl_Integer_Array(integer)<28|216E8> 589r47 595r44
+. 607r46 625r51 640r24
+553A8 syst_AwakeMotion_impl_Port_Kind_Array(17|37E9)<28|216E8> 575r47 641r26
+557A11 UT_Activity_The_Controller_syst_AwakeMotion_impl_Port_Image_Array_Component{string}<integer>
+. 563r9
+561A8 syst_AwakeMotion_impl_Port_Image_Array(557A11)<28|216E8> 581r48 642r27
+565A8 syst_AwakeMotion_impl_Address_Array(35|67M9)<28|216E8> 631r44 643r24
+569A8 syst_AwakeMotion_impl_Overflow_Protocol_Array(17|48E9)<28|216E8> 601r55
+. 644r34
+575a3 syst_the_thread_awake_Port_Kinds{553A8} 647r28
+581a3 syst_the_thread_awake_Port_Images{561A8} 649r29
+589a3 syst_the_thread_awake_FIFO_Sizes{549A8} 650r28
+595a3 syst_the_thread_awake_Offsets{549A8} 651r30
+601a3 syst_the_thread_awake_Overflow_Protocols{569A8} 652r36
+607a3 syst_the_thread_awake_Urgencies{549A8} 653r20
+613i3 syst_the_thread_awake_Total_FIFO_Size{integer} 654r33
+616A8 UT_Activity_The_Controller_the_thread_awake_motion_out_Destinations_Array(30|148E8)<integer>
+. 620r55 621r4
+620a3 the_thread_awake_motion_out_Destinations{616A8} 635r6
+625a3 syst_the_thread_awake_N_Destinations{549A8} 655r25
+631a3 the_thread_awake_Destinations{565A8} 656r23
+637K11 syst_the_thread_awake_Interrogators[21|145] 674r9 679r8 690r5 696r6
+. 1610r12 1626r5 1642r5 1662r12 1685r12 1708r12 1731r12 1750r5 1769r5 1787r5
+668i5 motion_in_V{34|12I8} 678m7 682m7 687r24
+669i5 motion_out_V{34|12I8} 688m25 693r28
+670e5 Error_Ü{11|34E9} 695m5 698r9 701r14 704r12
+709A8 syst_AwakeRules_impl_Integer_Array(integer)<28|303E8> 749r53 755r50
+. 767r52 776r57 791r24
+713A8 syst_AwakeRules_impl_Port_Kind_Array(17|37E9)<28|303E8> 735r53 792r26
+717A11 UT_Activity_The_Controller_syst_AwakeRules_impl_Port_Image_Array_Component{string}<integer>
+. 723r9
+721A8 syst_AwakeRules_impl_Port_Image_Array(717A11)<28|303E8> 741r54 793r27
+725A8 syst_AwakeRules_impl_Address_Array(35|67M9)<28|303E8> 782r50 794r24
+729A8 syst_AwakeRules_impl_Overflow_Protocol_Array(17|48E9)<28|303E8> 761r61
+. 795r34
+735a3 syst_the_thread_awake_rules_Port_Kinds{713A8} 798r28
+741a3 syst_the_thread_awake_rules_Port_Images{721A8} 800r29
+749a3 syst_the_thread_awake_rules_FIFO_Sizes{709A8} 801r28
+755a3 syst_the_thread_awake_rules_Offsets{709A8} 802r30
+761a3 syst_the_thread_awake_rules_Overflow_Protocols{729A8} 803r36
+767a3 syst_the_thread_awake_rules_Urgencies{709A8} 804r20
+773i3 syst_the_thread_awake_rules_Total_FIFO_Size{integer} 805r33
+776a3 syst_the_thread_awake_rules_N_Destinations{709A8} 806r25
+782a3 the_thread_awake_rules_Destinations{725A8} 807r23
+788K11 syst_the_thread_awake_rules_Interrogators[21|145] 825r9 830r8 841r5
+. 847r6 1804r12 1820r5 1836r5 1856r12 1879r12 1902r12 1925r12 1944r5 1963r5
+. 1981r5
+819i5 motion_in_V{34|12I8} 829m7 833m7 838r24
+820i5 coffee_out_V{34|12I8} 839m21 844r28
+821e5 Error_Ü{11|34E9} 846m5 849r9 852r14 855r12
+860A8 syst_ProcessVideo_impl_Integer_Array(integer)<28|390E8> 905r47 913r44
+. 929r46 949r51 968r24
+864A8 syst_ProcessVideo_impl_Port_Kind_Array(17|37E9)<28|390E8> 886r47 969r26
+868A11 UT_Activity_The_Controller_syst_ProcessVideo_impl_Port_Image_Array_Component{string}<integer>
+. 874r9
+872A8 syst_ProcessVideo_impl_Port_Image_Array(868A11)<28|390E8> 894r48 970r27
+876A8 syst_ProcessVideo_impl_Address_Array(35|67M9)<28|390E8> 957r44 971r24
+880A8 syst_ProcessVideo_impl_Overflow_Protocol_Array(17|48E9)<28|390E8> 921r55
+. 972r34
+886a3 syst_the_thread_video_Port_Kinds{864A8} 975r28
+894a3 syst_the_thread_video_Port_Images{872A8} 977r29
+905a3 syst_the_thread_video_FIFO_Sizes{860A8} 978r28
+913a3 syst_the_thread_video_Offsets{860A8} 979r30
+921a3 syst_the_thread_video_Overflow_Protocols{880A8} 980r36
+929a3 syst_the_thread_video_Urgencies{860A8} 981r20
+937i3 syst_the_thread_video_Total_FIFO_Size{integer} 982r33
+940A8 UT_Activity_The_Controller_the_thread_video_video_not_recognized_Destinations_Array(30|148E8)<integer>
+. 944r65 945r4
+944a3 the_thread_video_video_not_recognized_Destinations{940A8} 963r6
+949a3 syst_the_thread_video_N_Destinations{860A8} 983r25
+957a3 the_thread_video_Destinations{876A8} 984r23
+965K11 syst_the_thread_video_Interrogators[21|145] 1003r9 1008r8 1020r5 1024r5
+. 1030r6 1038r6 1998r12 2014r5 2030r5 2050r12 2073r12 2096r12 2119r12 2138r5
+. 2157r5 2175r5
+996i5 video_in_V{34|12I8} 1007m7 1011m7 1016r19
+997i5 video_out_V{34|12I8} 1017m20 1023r27
+998i5 video_not_recognized_V{34|12I8} 1018m31 1027r38
+999e5 Error_Ü{11|34E9} 1029m5 1032r9 1035r14 1037m5 1040r9 1043r14 1046r12
+1051A8 syst_CarCheck_impl_Integer_Array(integer)<28|480E8> 1091r45 1097r42
+. 1109r44 1127r49 1142r24
+1055A8 syst_CarCheck_impl_Port_Kind_Array(17|37E9)<28|480E8> 1077r45 1143r26
+1059A11 UT_Activity_The_Controller_syst_CarCheck_impl_Port_Image_Array_Component{string}<integer>
+. 1065r9
+1063A8 syst_CarCheck_impl_Port_Image_Array(1059A11)<28|480E8> 1083r46 1144r27
+1067A8 syst_CarCheck_impl_Address_Array(35|67M9)<28|480E8> 1133r42 1145r24
+1071A8 syst_CarCheck_impl_Overflow_Protocol_Array(17|48E9)<28|480E8> 1103r53
+. 1146r34
+1077a3 syst_the_thread_car_Port_Kinds{1055A8} 1149r28
+1083a3 syst_the_thread_car_Port_Images{1063A8} 1151r29
+1091a3 syst_the_thread_car_FIFO_Sizes{1051A8} 1152r28
+1097a3 syst_the_thread_car_Offsets{1051A8} 1153r30
+1103a3 syst_the_thread_car_Overflow_Protocols{1071A8} 1154r36
+1109a3 syst_the_thread_car_Urgencies{1051A8} 1155r20
+1115i3 syst_the_thread_car_Total_FIFO_Size{integer} 1156r33
+1118A8 UT_Activity_The_Controller_the_thread_car_motion_out_Destinations_Array(30|148E8)<integer>
+. 1122r53 1123r4
+1122a3 the_thread_car_motion_out_Destinations{1118A8} 1137r6
+1127a3 syst_the_thread_car_N_Destinations{1051A8} 1157r25
+1133a3 the_thread_car_Destinations{1067A8} 1158r23
+1139K11 syst_the_thread_car_Interrogators[21|145] 1176r9 1181r8 1192r5 1198r6
+. 2192r12 2208r5 2224r5 2244r12 2267r12 2290r12 2313r12 2332r5 2351r5 2369r5
+1170i5 motion_in_V{34|12I8} 1180m7 1184m7 1189r24
+1171i5 motion_out_V{34|12I8} 1190m25 1195r28
+1172e5 Error_Ü{11|34E9} 1197m5 1200r9 1203r14 1206r12
+X 30 polyorb_hi_generated-deployment.ads
+10K30*Deployment 28|11w27 42r35 47r35 51r35 55r35 60r35 62r32 65r35 70r35
+. 75r35 79r35 81r33 86r35 97r38 150r35 155r35 159r35 163r35 168r35 170r32
+. 173r35 178r35 183r35 187r35 189r33 194r35 205r38 237r35 242r35 246r35 250r35
+. 255r35 257r32 260r35 265r35 270r35 274r35 276r33 281r35 292r38 324r35 329r35
+. 333r35 337r35 342r35 344r32 347r35 352r35 357r35 361r35 363r33 368r35 379r38
+. 414r35 419r35 423r35 427r35 432r35 434r32 437r35 442r35 447r35 451r35 453r33
+. 458r35 469r38 501r35 506r35 510r35 514r35 519r35 521r32 524r35 529r35 534r35
+. 538r35 540r33 545r35 556r38 29|29r44 57r27 58r30 60r27 61r30 92r30 97r29
+. 120r46 231r27 232r30 234r27 235r30 237r27 238r30 240r27 241r30 243r27 244r30
+. 246r27 247r30 249r27 250r30 252r27 253r30 255r27 256r30 390r46 583r27 584r30
+. 586r27 587r30 618r30 623r29 646r46 743r27 744r30 746r27 747r30 797r46 896r27
+. 897r30 899r27 900r30 902r27 903r30 942r30 947r29 974r46 1085r27 1086r30
+. 1088r27 1089r30 1120r30 1125r29 1148r46 1214r35 1218r30 1231r35 1234r30
+. 1247r35 1250r30 1263r35 1267r30 1286r35 1288r32 1290r30 1309r35 1313r30
+. 1332r35 1336r30 1355r35 1358r30 1371r35 1373r33 1377r30 1392r35 1395r30
+. 1408r35 1412r30 1425r35 1428r30 1441r35 1444r30 1457r35 1461r30 1480r35
+. 1482r32 1484r30 1503r35 1507r30 1526r35 1530r30 1549r35 1552r30 1565r35
+. 1567r33 1571r30 1586r35 1589r30 1602r35 1606r30 1619r35 1622r30 1635r35
+. 1638r30 1651r35 1655r30 1674r35 1676r32 1678r30 1697r35 1701r30 1720r35
+. 1724r30 1743r35 1746r30 1759r35 1761r33 1765r30 1780r35 1783r30 1796r35
+. 1800r30 1813r35 1816r30 1829r35 1832r30 1845r35 1849r30 1868r35 1870r32
+. 1872r30 1891r35 1895r30 1914r35 1918r30 1937r35 1940r30 1953r35 1955r33
+. 1959r30 1974r35 1977r30 1990r35 1994r30 2007r35 2010r30 2023r35 2026r30
+. 2039r35 2043r30 2062r35 2064r32 2066r30 2085r35 2089r30 2108r35 2112r30
+. 2131r35 2134r30 2147r35 2149r33 2153r30 2168r35 2171r30 2184r35 2188r30
+. 2201r35 2204r30 2217r35 2220r30 2233r35 2237r30 2256r35 2258r32 2260r30
+. 2279r35 2283r30 2302r35 2306r30 2325r35 2328r30 2341r35 2343r33 2347r30
+. 2362r35 2365r30 30|335e36
+60E8*Entity_Type 28|42r46 47r46 51r46 55r46 60r46 62r43 65r46 70r46 75r46
+. 79r46 81r44 86r46 150r46 155r46 159r46 163r46 168r46 170r43 173r46 178r46
+. 183r46 187r46 189r44 194r46 237r46 242r46 246r46 250r46 255r46 257r43 260r46
+. 265r46 270r46 274r46 276r44 281r46 324r46 329r46 333r46 337r46 342r46 344r43
+. 347r46 352r46 357r46 361r46 363r44 368r46 414r46 419r46 423r46 427r46 432r46
+. 434r43 437r46 442r46 447r46 451r46 453r44 458r46 501r46 506r46 510r46 514r46
+. 519r46 521r43 524r46 529r46 534r46 538r46 540r44 545r46 29|1214r46 1231r46
+. 1247r46 1263r46 1286r46 1288r43 1309r46 1332r46 1355r46 1371r46 1373r44
+. 1392r46 1408r46 1425r46 1441r46 1457r46 1480r46 1482r43 1503r46 1526r46
+. 1549r46 1565r46 1567r44 1586r46 1602r46 1619r46 1635r46 1651r46 1674r46
+. 1676r43 1697r46 1720r46 1743r46 1759r46 1761r44 1780r46 1796r46 1813r46
+. 1829r46 1845r46 1868r46 1870r43 1891r46 1914r46 1937r46 1953r46 1955r44
+. 1974r46 1990r46 2007r46 2023r46 2039r46 2062r46 2064r43 2085r46 2108r46
+. 2131r46 2147r46 2149r44 2168r46 2184r46 2201r46 2217r46 2233r46 2256r46
+. 2258r43 2279r46 2302r46 2325r46 2341r46 2343r44 2362r46 30|66e37
+61n5*the_controller_the_thread_motion_K{60E8} 28|97r49 29|120r57
+62n5*the_controller_the_thread_control_K{60E8} 28|205r49 29|390r57
+63n5*the_controller_the_thread_awake_K{60E8} 28|292r49 29|646r57
+64n5*the_controller_the_thread_awake_rules_K{60E8} 28|379r49 29|797r57
+65n5*the_controller_the_thread_video_K{60E8} 28|469r49 29|974r57
+66n5*the_controller_the_thread_car_K{60E8} 28|556r49 29|1148r57
+148E8*Port_Type 29|92r41 618r41 942r41 1120r41 30|168e48
+149n5*the_controller_the_thread_motion_motion_in_K{148E8} 29|58r41
+150n5*the_controller_the_thread_motion_motion_out_K{148E8} 29|61r41
+151n5*the_controller_the_thread_control_video_not_recognized_K{148E8} 29|232r41
+. 947r40
+152n5*the_controller_the_thread_control_motion_in_K{148E8} 29|97r40 235r41
+153n5*the_controller_the_thread_control_camera_out_K{148E8} 29|238r41
+154n5*the_controller_the_thread_control_light_out_K{148E8} 29|241r41
+155n5*the_controller_the_thread_control_heat_out_K{148E8} 29|244r41
+156n5*the_controller_the_thread_control_music_out_K{148E8} 29|247r41
+157n5*the_controller_the_thread_control_alarm_out_K{148E8} 29|250r41
+158n5*the_controller_the_thread_control_gate_in_K{148E8} 29|253r41 1125r40
+159n5*the_controller_the_thread_control_gate_out_K{148E8} 29|256r41
+160n5*the_controller_the_thread_awake_motion_in_K{148E8} 29|584r41
+161n5*the_controller_the_thread_awake_motion_out_K{148E8} 29|587r41
+162n5*the_controller_the_thread_awake_rules_motion_in_K{148E8} 29|623r40
+. 744r41
+163n5*the_controller_the_thread_awake_rules_coffee_out_K{148E8} 29|747r41
+164n5*the_controller_the_thread_video_video_in_K{148E8} 29|897r41
+165n5*the_controller_the_thread_video_video_out_K{148E8} 29|900r41
+166n5*the_controller_the_thread_video_video_not_recognized_K{148E8} 29|903r41
+167n5*the_controller_the_thread_car_motion_in_K{148E8} 29|1086r41
+168n5*the_controller_the_thread_car_motion_out_K{148E8} 29|1089r41
+270i3*Max_Port_Image_Size{integer} 29|29r55
+275A11*Port_Sized_String{string}<integer>
+281A8*UT_Deployment_The_Controller_Port_Image_Array(275A11)<148E8>
+285a3*Port_Image{281A8} 29|57r38 60r38 231r38 234r38 237r38 240r38 243r38
+. 246r38 249r38 252r38 255r38 583r38 586r38 743r38 746r38 896r38 899r38 902r38
+. 1085r38 1088r38
+X 31 polyorb_hi_generated-marshallers.ads
+13K30*Marshallers 29|10w27 131r40 401r40 657r40 808r40 985r40 1159r40 31|91e37
+17U13*Marshall 29|131r52
+38U13*Marshall 29|401r52
+49U13*Marshall 29|657r52
+60U13*Marshall 29|808r52
+71U13*Marshall 29|985r52
+82U13*Marshall 29|1159r52
+X 32 polyorb_hi_generated-subprograms.ads
+11K30*Subprograms 29|14w27 160r26 459r26 686r26 837r26 1015r26 1188r26 32|58e37
+13U13*syst_Motion_Processing 29|160s38 686s38 1188s38
+14i5 movement_data{34|12I8} 29|161r7 687r7 1189r7
+15i5 person_in_room{34|12I8} 29|162r7 688r7 1190r7
+17U13*syst_Control_Processing 29|459s38
+18i5 movement_data{34|12I8} 29|460r7
+19i5 video_data{34|12I8} 29|461r7
+20i5 camera_out{34|12I8} 29|462r7
+21i5 light_out{34|12I8} 29|463r7
+22i5 heat_out{34|12I8} 29|464r7
+23i5 music_out{34|12I8} 29|465r7
+24i5 alarm_out{34|12I8} 29|466r7
+25i5 gate_in{34|12I8} 29|467r7
+26i5 gate_out{34|12I8} 29|468r7
+28U13*syst_Awake_Processing 29|837s38
+29i5 movement_data{34|12I8} 29|838r7
+30i5 coffee_out{34|12I8} 29|839r7
+32U13*syst_Video_Processing 29|1015s38
+33i5 video_in{34|12I8} 29|1016r7
+34i5 video_out{34|12I8} 29|1017r7
+35i5 video_not_recognized{34|12I8} 29|1018r7
+X 33 polyorb_hi_generated-transport.ads
+14K30*Transport 29|11w27 132r36 402r36 658r36 809r36 986r36 1160r36 33|26e35
+20V12*Send{11|34E9} 29|132r46 402r46 658r46 809r46 986r46 1160r46
+X 34 polyorb_hi_generated-types.ads
+10K30*Types 28|9w27 31r49 33r50 125r60 127r49 129r50 131r49 133r48 135r49
+. 137r49 139r47 141r48 226r49 228r50 313r49 315r50 401r48 403r49 405r60 490r49
+. 492r50 29|142r40 143r41 157r29 412r51 413r40 414r38 415r41 416r40 417r39
+. 418r40 419r40 420r39 434r29 445r29 456r29 668r40 669r41 683r29 819r40 820r41
+. 834r29 996r39 997r40 998r51 1012r29 1170r40 1171r41 1185r29 34|20e31
+12I8*motion_State<integer> 28|31r55 33r56 125r66 127r55 129r56 131r55 133r54
+. 135r55 137r55 139r53 141r54 226r55 228r56 313r55 315r56 401r54 403r55 405r66
+. 490r55 492r56 29|142r46 143r47 412r57 413r46 414r44 415r47 416r46 417r45
+. 418r46 419r46 420r45 668r46 669r47 819r46 820r47 996r45 997r46 998r57 1170r46
+. 1171r47
+17i3*motion_State_Default_Value{12I8} 29|157r35 434r35 445r35 456r35 683r35
+. 834r35 1012r35 1185r35
+X 35 system.ads
+37K9*System 28|15w6 384r24 29|41r9 107r6 201r9 363r6 365r6 367r6 369r6 371r6
+. 373r6 375r6 377r6 379r6 567r9 633r6 727r9 784r6 786r6 878r9 959r6 961r6
+. 1069r9 1135r6 35|156e11
+67M9*Address 29|41r16 201r16 567r16 727r16 878r16 1069r16
+69m4*Null_Address{67M9} 29|107r13 363r13 365r13 367r13 369r13 371r13 373r13
+. 375r13 377r13 379r13 633r13 784r13 786r13 959r13 961r13 1135r13
+108I12*Any_Priority{integer}
+109I12*Priority{108I12}
+112i4*Default_Priority{109I12} 28|384r31
+X 49 s-stausa.ads
+203U14*Initialize 204i<c,__gnat_stack_usage_initialize>22
+268U14*Output_Results 272i<c,__gnat_stack_usage_output_results>22
+

@@ -1,24 +1,28 @@
 package syst
 public
+	with home_types;
+	with deployment;
+	
 	system SmartHome
 	end SmartHome;
 	
 	system implementation SmartHome.with_devices
 		subcomponents
-			the_motion_sensor: device MotionSensor;
-			the_car_sensor: device CarSensor;
-			the_awake_sensor: device AwakeSensor;
-			the_camera: device Camera;
-			the_alarm_unit: device AlarmUnit;
-			the_heater: device Heater;
-			the_light: device Light;
-			the_music: device Music;
-			the_coffee_maker: device CoffeeMaker;
-			the_garage_gate: device Garage;
-			the_security: device SecurityCenter;
+			the_motion_sensor: device MotionSensor.impl;
+			the_car_sensor: device CarSensor.impl;
+			the_awake_sensor: device AwakeSensor.impl;
+			the_camera: device Camera.impl;
+			the_alarm_unit: device AlarmUnit.impl;
+			the_heater: device Heater.impl;
+			the_light: device Light.impl;
+			the_music: device Music.impl;
+			the_coffee_maker: device CoffeeMaker.impl;
+			the_garage_gate: device Garage.impl;
+			the_security: device SecurityCenter.impl;
 			the_controller: process Controller.with_threads;
 			the_bus: bus HWConnection.impl;
 			the_processor: processor MainProcessor.impl;
+			
 		connections
 			camera_conn_out:port the_camera.video_stream->the_controller.video_from_camera;
 			alarm_conn:port the_controller.alarm_out->the_alarm_unit.alarm_on_off;
@@ -32,19 +36,35 @@ public
 			awake_conn:port the_awake_sensor.awake_detected->the_controller.awake_in;
 			camera_conn_in:port the_controller.camera_out->the_camera.camera_on_off;
 			video_transfer:port the_controller.video_out->the_security.video_in;
-			bus_motion:bus access the_bus->the_motion_sensor.bus_access;
-			bus_car: bus access the_bus->the_car_sensor.bus_access;
-			bus_awake: bus access the_bus->the_awake_sensor.bus_access;
-			bus_coffee: bus access the_bus->the_coffee_maker.bus_access;
-			bus_camer:bus access the_bus->the_camera.bus_access;
-			bus_alarm:bus access the_bus->the_alarm_unit.bus_access;
-			bus_heater:bus access the_bus->the_heater.bus_access;
-			bus_light:bus access the_bus->the_light.bus_access;	
-			bus_garage:bus access the_bus->the_garage_gate.bus_access;	
-			bus_music:bus access the_bus->the_music.bus_access;			
-			bus_processor:bus access the_bus->the_processor.bus_access;		
+			
+			bus_motion:bus access the_bus <-> the_motion_sensor.bus_access;
+			bus_car: bus access the_bus <-> the_car_sensor.bus_access;
+			bus_awake: bus access the_bus <-> the_awake_sensor.bus_access;
+			bus_coffee: bus access the_bus <-> the_coffee_maker.bus_access;
+			bus_camer:bus access the_bus <-> the_camera.bus_access;
+			bus_alarm:bus access the_bus <-> the_alarm_unit.bus_access;
+			bus_heater:bus access the_bus <-> the_heater.bus_access;
+			bus_light:bus access the_bus <-> the_light.bus_access;	
+			bus_garage:bus access the_bus <-> the_garage_gate.bus_access;	
+			bus_music:bus access the_bus <-> the_music.bus_access;			
+			bus_processor:bus access the_bus <-> the_processor.bus_access;		
 		PROPERTIES
   			Actual_Processor_Binding => (reference (the_processor)) applies to the_controller;
+  			Actual_Memory_Binding => (reference (the_processor.the_ram)) applies to the_controller;
+  			
+  			Actual_Connection_Binding => (reference(the_bus)) applies to motion_conn;
+  			Actual_Connection_Binding => (reference(the_bus)) applies to camera_conn_in;
+  			Actual_Connection_Binding => (reference(the_bus)) applies to camera_conn_out;
+  			Actual_Connection_Binding => (reference(the_bus)) applies to alarm_conn;
+  			Actual_Connection_Binding => (reference(the_bus)) applies to light_conn;
+  			Actual_Connection_Binding => (reference(the_bus)) applies to garage_conn;
+  			Actual_Connection_Binding => (reference(the_bus)) applies to coffee_conn;
+  			Actual_Connection_Binding => (reference(the_bus)) applies to heater_conn;
+ 			Actual_Connection_Binding => (reference(the_bus)) applies to music_conn;
+ 			Actual_Connection_Binding => (reference(the_bus)) applies to car_conn;
+  			Actual_Connection_Binding => (reference(the_bus)) applies to awake_conn;
+  			Actual_Connection_Binding => (reference(the_bus)) applies to video_transfer;
+  			
 			Priority => 10 applies to the_controller.the_thread_motion;
 	        Priority => 09 applies to the_controller.the_thread_control;
 	        Priority => 03 applies to the_controller.the_thread_awake;
@@ -55,22 +75,22 @@ public
 	
 	process Controller
 	features
-		video_from_camera: in data port;
+		video_from_camera: in data port home_types::motion_State;
 
-		video_out: out data port;
+		video_out: out data port home_types::motion_State;
 
-		motion_in: in event port;
-		gate_in: in event port;
-		awake_in: in event port;
-		camera_out: out event port;
-		light_out: out event port;
-		gate_out: out event port;
-		coffee_out: out event port;
-		heat_out: out event port;
-		music_out: out event port;
-		alarm_out: out event port;
+		motion_in: in data port home_types::motion_State;
+		gate_in: in data port home_types::motion_State;
+		awake_in: in data port home_types::motion_State;
+		camera_out: out data port home_types::motion_State;
+		light_out: out data port home_types::motion_State;
+		gate_out: out data port home_types::motion_State;
+		coffee_out: out data port home_types::motion_State;
+		heat_out: out data port home_types::motion_State;
+		music_out: out data port home_types::motion_State;
+		alarm_out: out data port home_types::motion_State;
 
-end Controller;
+	end Controller;
 	
 	process implementation Controller.with_threads
 	subcomponents
@@ -100,95 +120,208 @@ end Controller;
 		car_thread_conn: port gate_in -> the_thread_car.motion_in;
 		gate_thread_conn: port the_thread_car.motion_out -> the_thread_control.gate_in;
 
-end Controller.with_threads;
+	end Controller.with_threads;
 	
 	thread ReadMotion
 		features
-			motion_in: in event port;
-			motion_out: out event port;
+			motion_in: in data port home_types::motion_State;
+			motion_out: out data port home_types::motion_State;
 	end ReadMotion;
 	
 	thread implementation ReadMotion.impl
+		calls
+			Mycalls: {
+				Q: subprogram Motion_Processing;
+			};
+		connections
+			c0: parameter motion_in -> Q.movement_data;
+			c1: parameter Q.person_in_room -> motion_out; 
+			
 		PROPERTIES
 		  Dispatch_Protocol => Periodic;
 		  Compute_Execution_Time => 10ms .. 10ms;
 		  Period => 500 ms;
 	end ReadMotion.impl;
 	
+	SUBPROGRAM Motion_Processing
+		FEATURES
+			movement_data: in parameter home_types::motion_State;
+			person_in_room: out parameter home_types::motion_State;
+		properties
+			source_language => (C);
+			source_name => "readMotion";
+			source_text => ("home.c");
+	END Motion_Processing;
+	
 	
 	thread CarCheck
 		features
-			motion_in: in event port;
-			motion_out: out event port;
+			motion_in: in data port home_types::motion_State;
+			motion_out: out data port home_types::motion_State;
 			
 	end CarCheck;
 	
 	thread implementation CarCheck.impl
+		calls
+			Mycalls: {
+				Q: subprogram Car_Processing;
+			};
+		connections
+			c0: parameter motion_in -> Q.movement_data;
+			c1: parameter Q.car_detected -> motion_out; 
 		PROPERTIES
 		  Dispatch_Protocol => Periodic;
 		  Compute_Execution_Time => 20ms .. 20ms;
 		  Period => 5000 ms;
 	end CarCheck.impl;
 	
+	
+	SUBPROGRAM Car_Processing
+		FEATURES
+			movement_data: in parameter home_types::motion_State;
+			car_detected: out parameter home_types::motion_State;
+		properties
+			source_language => (C);
+			source_name => "readMotion";
+			source_text => ("home.c");
+	END Car_Processing;
+	
 	thread AwakeMotion
 		features
-			motion_in: in event port;
-			motion_out: out event port;
+			motion_in: in data port home_types::motion_State;
+			motion_out: out data port home_types::motion_State;
 			
 	end AwakeMotion;
 	
 	thread implementation AwakeMotion.impl
+		calls
+			Mycalls: {
+				Q: subprogram Awake_Processing;
+			};
+		connections
+			c0: parameter motion_in -> Q.movement_data;
+			c1: parameter Q.motion_out -> motion_out; 
 		PROPERTIES
 		  Dispatch_Protocol => Periodic;
 		  Compute_Execution_Time => 10ms .. 10ms;
 		  Period => 300000 ms;
 	end AwakeMotion.impl;
 	
+	SUBPROGRAM Awake_Processing
+		FEATURES
+			movement_data: in parameter home_types::motion_State;
+			motion_out: out parameter home_types::motion_State;
+		properties
+			source_language => (C);
+			source_name => "readMotion";
+			source_text => ("home.c");
+	END Awake_Processing;
+	
 	
 	thread ControlRules
-	features
-		video_not_recognized: in event port;
-		motion_in: in event port;
-		camera_out: out event port;
-		light_out: out event port;
-		heat_out: out event port;
-		music_out: out event port;
-		alarm_out: out event port;
-		gate_in: in event port;
-		gate_out: out event port;
+		features
+			video_not_recognized: in data port home_types::motion_State;
+			motion_in: in data port home_types::motion_State;
+			camera_out: out data port home_types::motion_State;
+			light_out: out data port home_types::motion_State;
+			heat_out: out data port home_types::motion_State;
+			music_out: out data port home_types::motion_State;
+			alarm_out: out data port home_types::motion_State;
+			gate_in: in data port home_types::motion_State;
+			gate_out: out data port home_types::motion_State;
 	end ControlRules;
 	
 	thread implementation ControlRules.impl
+		calls
+			Mycalls: {
+				Q: subprogram Control_Processing;
+			};
+		connections
+			c0: parameter motion_in -> Q.movement_data;
+			c1: parameter video_not_recognized -> Q.video_data;
+			c2: parameter gate_in -> Q.gate_in;
+			c3: parameter Q.camera_out -> camera_out;
+			c4: parameter Q.light_out -> light_out;
+			c5: parameter Q.heat_out -> heat_out;
+			c6: parameter Q.music_out -> music_out;
+			c7: parameter Q.alarm_out -> alarm_out;
+			c8: parameter Q.gate_out -> gate_out;
+
 		PROPERTIES
 		  Dispatch_Protocol => Periodic;
 		  Compute_Execution_Time => 10ms .. 10ms;
 		  Period => 100 ms;
 	end ControlRules.impl;
 	
+	SUBPROGRAM Control_Processing
+		FEATURES
+			movement_data: in parameter home_types::motion_State;
+			video_data: in parameter home_types::motion_State;
+			camera_out: out parameter home_types::motion_State;
+			light_out: out parameter home_types::motion_State;
+			heat_out: out parameter home_types::motion_State;
+			music_out: out parameter home_types::motion_State;
+			alarm_out: out parameter home_types::motion_State;
+			gate_in: in parameter home_types::motion_State;
+			gate_out: out parameter home_types::motion_State;
+			
+		properties
+			source_language => (C);
+			source_name => "readMotion"; -- zmienić na inną funkcję
+			source_text => ("home.c");
+	END Control_Processing;
+	
 		
 	thread AwakeRules
 		features
-			motion_in: in event port;
-			coffee_out: out event port;
+			motion_in: in data port home_types::motion_State;
+			coffee_out: out data port home_types::motion_State;
 			
 	end AwakeRules;
 	
 	thread implementation AwakeRules.impl
+		calls
+			Mycalls: {
+				Q: subprogram Awake_Processing_Rules;
+			};
+		connections
+			c0: parameter motion_in -> Q.movement_data;
+			c1: parameter Q.coffee_out -> coffee_out; 
 		PROPERTIES
 		  Dispatch_Protocol => Periodic;
 		  Compute_Execution_Time => 10ms .. 10ms;
 		  Period => 10000 ms;
 	end AwakeRules.impl;
 	
+	
+	SUBPROGRAM Awake_Processing_Rules
+		FEATURES
+			movement_data: in parameter home_types::motion_State;
+			coffee_out: out parameter home_types::motion_State;
+		properties
+			source_language => (C);
+			source_name => "readMotion"; -- zmienić funkcję
+			source_text => ("home.c");
+	END Awake_Processing_Rules;
+	
 	thread ProcessVideo
 		features
-			video_in: in data port;	
-			video_out: out data port;	
-			video_not_recognized: out event port;		
+			video_in: in data port home_types::motion_State;	
+			video_out: out data port home_types::motion_State;
+			video_not_recognized: out data port home_types::motion_State;		
 		
 	end ProcessVideo;
 	
 	thread implementation ProcessVideo.impl
+		calls
+			Mycalls: {
+				Q: subprogram Video_Processing;
+			};
+		connections
+			c0: parameter video_in -> Q.video_in;
+			c1: parameter Q.video_out -> video_out;
+			c2: parameter Q.video_not_recognized -> video_not_recognized;
+			
 		PROPERTIES
 		  Dispatch_Protocol => Periodic;
 		  --Compute_Execution_Time => 50ms .. 500ms;
@@ -196,30 +329,59 @@ end Controller.with_threads;
 		  Period => 1000 ms;
 	end ProcessVideo.impl;
 	
+	SUBPROGRAM Video_Processing
+		FEATURES
+			video_in: in parameter home_types::motion_State;
+			video_out: out parameter home_types::motion_State;
+			video_not_recognized: out parameter home_types::motion_State;
+			
+		properties
+			source_language => (C);
+			source_name => "readMotion"; -- zmienić funkcję
+			source_text => ("home.c");
+	END Video_Processing;
+	
 	processor MainProcessor	
-			features
-			bus_access: requires bus access HWConnection.impl;
+		features
+			bus_access: requires bus access HWConnection;
+		PROPERTIES
+			Clock_Period => 200ns;
+		   	Scheduling_protocol => (posix_1003_highest_priority_first_protocol);
+		   	Deployment::Execution_Platform => Native;
+		   	Priority_Range => 1 .. 10;
 	end MainProcessor;
 	
 	processor implementation MainProcessor.impl
 		subcomponents
-			the_ram: memory Ram;
-		properties
-			Scheduling_Protocol => (POSIX_1003_HIGHEST_PRIORITY_FIRST_PROTOCOL);
+			the_ram: memory Ram.impl;
 	end MainProcessor.impl;
 	
-	memory Ram	
-	end Ram;
+--	memory Ram	
+--	end Ram;
 	
-	bus HWConnection
-	end HWConnection;
+	MEMORY Ram
+	  FEATURES
+	    HWConnection : REQUIRES BUS ACCESS HWConnection;
+	  END Ram;
+	  
+	 memory implementation RAM.impl
+	 	
+	 end RAM.impl;
 	
-	bus implementation HWConnection.impl
+	
+	BUS HWConnection
+	END HWConnection;
+	 
+	BUS implementation HWConnection.impl
+		properties
+	  		Deployment::Transport_API => BSD_Sockets;
 	end HWConnection.impl;
+	
+
 	
 	device MotionSensor
 		features
-			motion_detected: out event port;
+			motion_detected: out data port home_types::motion_State;
 			bus_access: requires bus access HWConnection.impl;
 	end MotionSensor;
 	
@@ -228,7 +390,7 @@ end Controller.with_threads;
 	
 	device CarSensor
 		features
-			car_detected: out event port;
+			car_detected: out data port home_types::motion_State;
 			bus_access: requires bus access HWConnection.impl;
 	end CarSensor;
 	
@@ -237,7 +399,7 @@ end Controller.with_threads;
 	
 	device AwakeSensor
 		features
-			awake_detected: out event port;
+			awake_detected: out data port home_types::motion_State;
 			bus_access: requires bus access HWConnection.impl;
 	end AwakeSensor;
 	
@@ -246,8 +408,8 @@ end Controller.with_threads;
 	
 	device Camera
 		features
-			camera_on_off: in event port;
-			video_stream: out data port;
+			camera_on_off: in data port home_types::motion_State;
+			video_stream: out data port home_types::motion_State;
 			bus_access: requires bus access HWConnection.impl;
 			
 	end Camera;
@@ -257,7 +419,7 @@ end Controller.with_threads;
 	
 	device Heater
 		features
-			heater_on_off: in event port;
+			heater_on_off: in data port home_types::motion_State;
 			bus_access: requires bus access HWConnection.impl;
 			
 	end Heater;
@@ -268,7 +430,7 @@ end Controller.with_threads;
 	
 	device Light
 		features
-			light_on_off: in event port;
+			light_on_off: in data port home_types::motion_State;
 			bus_access: requires bus access HWConnection.impl;
 			
 	end Light;
@@ -278,7 +440,7 @@ end Controller.with_threads;
 	
 	device Garage
 		features
-			garage_on_off: in event port;
+			garage_on_off: in data port home_types::motion_State;
 			bus_access: requires bus access HWConnection.impl;
 			
 	end Garage;
@@ -288,7 +450,7 @@ end Controller.with_threads;
 	
 	device CoffeeMaker
 		features
-			coffee_on_off: in event port;
+			coffee_on_off: in data port home_types::motion_State;
 			bus_access: requires bus access HWConnection.impl;
 			
 	end CoffeeMaker;
@@ -298,7 +460,7 @@ end Controller.with_threads;
 	
 	device Music
 		features
-			music_on_off: in event port;
+			music_on_off: in data port home_types::motion_State;
 			bus_access: requires bus access HWConnection.impl;
 			
 	end Music;
@@ -309,7 +471,7 @@ end Controller.with_threads;
 	
 	device SecurityCenter
 		features
-			video_in: in data port;			
+			video_in: in data port home_types::motion_State;		
 	end SecurityCenter;
 	
 	device implementation SecurityCenter.impl
@@ -318,7 +480,7 @@ end Controller.with_threads;
 	
 	device AlarmUnit
 		features
-			alarm_on_off: in event port;
+			alarm_on_off: in data port home_types::motion_State;
 			bus_access: requires bus access HWConnection.impl;
 			
 	end AlarmUnit;

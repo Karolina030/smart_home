@@ -1,0 +1,67 @@
+V "GNAT Lib v9"
+A -O1
+A -gnatA
+A -g
+A -gnatwa
+A -gnatwG
+A -gnat12
+A -g
+A -gnata
+A -gnato
+A -gnatE
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RR NO_ALLOCATORS
+RR NO_DISPATCH
+RR NO_IO
+RR NO_RECURSION
+RR NO_UNCHECKED_ACCESS
+RR NO_UNCHECKED_DEALLOCATION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_OBSOLESCENT_FEATURES
+
+U polyorb_hi_generated.subprograms%s  polyorb_hi_generated-subprograms.ads  31c6fa76 DE NE OO PK
+W polyorb_hi_generated%s  polyorb_hi_generated.ads  polyorb_hi_generated.ali
+W polyorb_hi_generated.types%s  polyorb_hi_generated-types.ads  polyorb_hi_generated-types.ali
+
+D polyorb_hi_generated.ads  20170204221544 32a22d97 polyorb_hi_generated%s
+D polyorb_hi_generated-subprograms.ads  20210626155240 63b8861a polyorb_hi_generated.subprograms%s
+D polyorb_hi_generated-types.ads  20210626155240 60dc51fb polyorb_hi_generated.types%s
+D system.ads		20200312110721 4635ec04 system%s
+D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/native.adc  20170204221544 00000000
+D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/gnat.adc  20170204221544 00000000
+X 1 polyorb_hi_generated.ads
+34K9*PolyORB_HI_Generated 38e25 2|9r6 11r9 14r21 15r26 18r21 19r18 20r22
+. 21r21 22r20 23r21 24r21 25r15 26r20 29r21 30r22 33r16 34r21 35r32 58r5
+X 2 polyorb_hi_generated-subprograms.ads
+11K30*Subprograms 1|34k9 2|41E5 58l26 58e37
+13U13*syst_Motion_Processing 14>5 15<5 40b<c,readMotion>5
+14i5 movement_data{3|12I8}
+15i5 person_in_room{3|12I8}
+17U13*syst_Control_Processing 18>5 19>5 20<5 21<5 22<5 23<5 24<5 25>5 26<5
+. 45b<c,readMotion>5
+18i5 movement_data{3|12I8}
+19i5 video_data{3|12I8}
+20i5 camera_out{3|12I8}
+21i5 light_out{3|12I8}
+22i5 heat_out{3|12I8}
+23i5 music_out{3|12I8}
+24i5 alarm_out{3|12I8}
+25i5 gate_in{3|12I8}
+26i5 gate_out{3|12I8}
+28U13*syst_Awake_Processing 29>5 30<5 50b<c,readMotion>5
+29i5 movement_data{3|12I8}
+30i5 coffee_out{3|12I8}
+32U13*syst_Video_Processing 33>5 34<5 35<5 55b<c,readMotion>5
+33i5 video_in{3|12I8}
+34i5 video_out{3|12I8}
+35i5 video_not_recognized{3|12I8}
+X 3 polyorb_hi_generated-types.ads
+10K30*Types 2|9w27 14r42 15r47 18r42 19r39 20r43 21r42 22r41 23r42 24r42
+. 25r36 26r41 29r42 30r43 33r37 34r42 35r53 3|20e31
+12I8*motion_State<integer> 2|14r48 15r53 18r48 19r45 20r49 21r48 22r47 23r48
+. 24r48 25r42 26r47 29r48 30r49 33r43 34r48 35r59
+
