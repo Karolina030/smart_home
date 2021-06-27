@@ -1046,18 +1046,6 @@
             <seg>c2</seg>
           </bo>
         </element>
-        <element uuid="7a548b6c-5aa4-45d1-9b91-63fc07828a7d" manual="true">
-          <element uuid="286ade9b-e40d-4903-aebf-18ee3db29ca6" manual="true">
-            <bo>
-              <seg>tag</seg>
-              <seg>unidirectional</seg>
-            </bo>
-          </element>
-          <bo>
-            <seg>connection</seg>
-            <seg>c3</seg>
-          </bo>
-        </element>
         <element uuid="75504899-5595-45b1-beed-9bd7ef03bc8e" manual="true">
           <element uuid="65eeb2a9-2c5a-4a69-9fcd-9ce4bd01a7ea" manual="true">
             <bo>
@@ -1189,13 +1177,6 @@
                 <seg>alarm_out</seg>
               </bo>
               <position x="219.0" y="412.0"/>
-            </element>
-            <element uuid="e734dd41-ae2f-4da1-ba68-a26f666239e9" manual="true" dockArea="right">
-              <bo>
-                <seg>feature</seg>
-                <seg>camera_out</seg>
-              </bo>
-              <position x="325.0" y="346.0"/>
             </element>
             <element uuid="4a8b7619-137f-47ff-b5f7-2757c62a35fd" manual="true" dockArea="left">
               <bo>

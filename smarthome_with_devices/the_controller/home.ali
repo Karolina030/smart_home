@@ -1,0 +1,81 @@
+V "GNAT Lib v9"
+A -O1
+A -gnatA
+A -g
+A -gnatwa
+A -gnatwG
+A -gnat12
+A -g
+A -gnata
+A -gnato
+A -gnatE
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RR NO_ALLOCATORS
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RR NO_DISPATCH
+RR NO_IO
+RR NO_RECURSION
+RR NO_UNCHECKED_ACCESS
+RR NO_UNCHECKED_DEALLOCATION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_OBSOLESCENT_FEATURES
+RV SPARK_05
+
+U home%b		home.adb		0f98c8d7 DE NE OO PK
+W polyorb_hi%s		polyorb_hi.ads		polyorb_hi.ali
+W polyorb_hi.output%s	polyorb_hi-output.adb	polyorb_hi-output.ali
+
+U home%s		home.ads		16a9645e DE EE NE OO PK
+W polyorb_hi_generated%s  polyorb_hi_generated.ads  polyorb_hi_generated.ali
+W polyorb_hi_generated.types%s  polyorb_hi_generated-types.ads  polyorb_hi_generated-types.ali
+
+D home.ads		20210626234500 99432dba home%s
+D home.adb		20210627003407 50c956e8 home%b
+D polyorb_hi.ads	20170204221544 f77a07a6 polyorb_hi%s
+D polyorb_hi-output.ads	20170204221544 c612b385 polyorb_hi.output%s
+D polyorb_hi-streams.ads  20170204221544 54018470 polyorb_hi.streams%s
+D polyorb_hi_generated.ads  20170204221544 32a22d97 polyorb_hi_generated%s
+D polyorb_hi_generated-types.ads  20210627003413 8fea49e4 polyorb_hi_generated.types%s
+D system.ads		20200312110721 4635ec04 system%s
+D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/native.adc  20170204221544 00000000
+D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/gnat.adc  20170204221544 00000000
+X 1 home.ads
+4K9*Home 37l5 37e9 2|3b14 104l5 104t9
+8U14*ReadMotion 9>7 10<7 2|7b14 20l8 20t18
+9i7 movement_data{7|12I8} 2|8b7 12r12
+10i7 person_in_room{7|12I8} 2|9b7 14m17 17m17
+12U14*CarCheck 13>7 14<7 2|22b14 34l8 34t16
+13i7 movement_data{7|12I8} 2|23b7 27r12
+14i7 car_detected{7|12I8} 2|24b7 29m17 32m17
+17U14*ProcessVideo 18>7 19<7 2|37b14 49l8 49t20
+18i7 video_in{7|12I8} 2|38b7 42r12
+19i7 video_data_out{7|12I8} 2|39b7 44m17 47m17
+22U14*AwakeMotion 23>7 24<7 2|52b14 64l8 64t19
+23i7 movement_data{7|12I8} 2|53b7 57r12
+24i7 motion_out{7|12I8} 2|54b7 59m17 62m17
+27U14*Awake_Processing_Rules 28>7 29<7 2|67b14 79l8 79t30
+28i7 movement_data{7|12I8} 2|68b7 72r12
+29i7 coffee_out{7|12I8} 2|69b7 74m17 77m17
+31U14*ControlRules 32>7 33>7 34>7 35<7 2|81b14 101l8 101t20
+32i7 movement_data{7|12I8} 2|82b7 88r12
+33i7 gate_in{7|12I8} 2|83b7 96r12
+34i7 video_not_recognized{7|12I8} 2|84b7 88r35 92r12
+35i7 out_data{7|12I8} 2|85b7 90m17 94m17 98m17
+X 3 polyorb_hi.ads
+35K9*PolyORB_HI 2|1r6 5r8 3|39e15
+X 4 polyorb_hi-output.ads
+38K20*Output 2|1w17 5r19 4|82e22
+63U14*Put_Line 2|13s17 16s17 28s17 31s17 43s17 46s17 58s17 61s17 73s17 76s17
+. 89s17 93s17 97s17
+X 6 polyorb_hi_generated.ads
+34K9*PolyORB_HI_Generated 1|2r6 6r8 6|38e25
+X 7 polyorb_hi_generated-types.ads
+10K30*Types 1|2w27 6r29 7|20e31
+12I8*State<integer> 1|9r23 10r28 13r23 14r26 18r18 19r28 23r23 24r24 28r23
+. 29r24 32r23 33r17 34r29 35r22 2|8r23 9r28 23r23 24r26 38r18 39r28 53r23
+. 54r24 68r23 69r24 82r23 83r17 84r29 85r22
+

@@ -1,0 +1,14 @@
+20210627003421
+-c
+-x
+ada
+-gnatA
+-g
+-gnatwa
+-gnatwG
+-gnat12
+-g
+-O1
+-gnata
+-gnato
+-gnatE

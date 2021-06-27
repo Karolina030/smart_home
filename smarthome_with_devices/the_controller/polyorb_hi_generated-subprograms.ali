@@ -1,0 +1,84 @@
+V "GNAT Lib v9"
+A -O1
+A -gnatA
+A -g
+A -gnatwa
+A -gnatwG
+A -gnat12
+A -g
+A -gnata
+A -gnato
+A -gnatE
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RR NO_ALLOCATORS
+RR NO_DISPATCH
+RR NO_IO
+RR NO_RECURSION
+RR NO_UNCHECKED_ACCESS
+RR NO_UNCHECKED_DEALLOCATION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_OBSOLESCENT_FEATURES
+
+U polyorb_hi_generated.subprograms%b  polyorb_hi_generated-subprograms.adb  3001e4e9 DE NE OO PK
+W home%s		home.adb		home.ali
+W polyorb_hi_generated%s  polyorb_hi_generated.ads  polyorb_hi_generated.ali
+
+U polyorb_hi_generated.subprograms%s  polyorb_hi_generated-subprograms.ads  1bf4465e DE EE NE OO PK
+W polyorb_hi_generated%s  polyorb_hi_generated.ads  polyorb_hi_generated.ali
+W polyorb_hi_generated.types%s  polyorb_hi_generated-types.ads  polyorb_hi_generated-types.ali
+
+D home.ads		20210626234500 99432dba home%s
+D polyorb_hi_generated.ads  20170204221544 32a22d97 polyorb_hi_generated%s
+D polyorb_hi_generated-subprograms.ads  20210626234509 a6bc222d polyorb_hi_generated.subprograms%s
+D polyorb_hi_generated-subprograms.adb  20210626234509 0ffeeb7e polyorb_hi_generated.subprograms%b
+D polyorb_hi_generated-types.ads  20210626234509 8fea49e4 polyorb_hi_generated.types%s
+D system.ads		20200312110721 4635ec04 system%s
+D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/gnat.adc  20170204221544 00000000
+D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/native.adc  20170204221544 00000000
+X 1 home.ads
+4K9*Home 37e9 4|9w6 16r12 23r12 28r12 33r12 38r12 43r12
+8U14*ReadMotion 4|16r17
+12U14*CarCheck 4|43r17
+17U14*ProcessVideo 4|38r17
+22U14*AwakeMotion 4|28r17
+27U14*Awake_Processing_Rules 4|33r17
+31U14*ControlRules 4|23r17
+X 2 polyorb_hi_generated.ads
+34K9*PolyORB_HI_Generated 38e25 3|9r6 11r9 14r21 15r26 18r21 19r28 20r15
+. 21r20 24r21 25r22 28r21 29r22 32r16 33r26 36r21 37r24 39r5 4|11r14 14r21
+. 15r26 19r21 20r28 21r15 22r20 26r21 27r22 31r21 32r22 36r16 37r26 41r21
+. 42r24 45r5
+X 3 polyorb_hi_generated-subprograms.ads
+11K30*Subprograms 2|34k9 3|39l26 39e37 4|11b35 45l26 45t37
+13U13*syst_Motion_Processing 14>5 15<5 4|13b13
+14i5 movement_data{5|12I8} 4|14b5
+15i5 person_in_room{5|12I8} 4|15b5
+17U13*syst_Control_Processing 18>5 19>5 20>5 21<5 4|18b13
+18i5 movement_data{5|12I8} 4|19b5
+19i5 video_not_recognized{5|12I8} 4|20b5
+20i5 gate_in{5|12I8} 4|21b5
+21i5 out_data{5|12I8} 4|22b5
+23U13*syst_Awake_Processing 24>5 25<5 4|25b13
+24i5 movement_data{5|12I8} 4|26b5
+25i5 motion_out{5|12I8} 4|27b5
+27U13*syst_Awake_Processing_Rules 28>5 29<5 4|30b13
+28i5 movement_data{5|12I8} 4|31b5
+29i5 coffee_out{5|12I8} 4|32b5
+31U13*syst_Video_Processing 32>5 33<5 4|35b13
+32i5 video_in{5|12I8} 4|36b5
+33i5 video_data_out{5|12I8} 4|37b5
+35U13*syst_Car_Processing 36>5 37<5 4|40b13
+36i5 movement_data{5|12I8} 4|41b5
+37i5 car_detected{5|12I8} 4|42b5
+X 5 polyorb_hi_generated-types.ads
+10K30*Types 3|9w27 14r42 15r47 18r42 19r49 20r36 21r41 24r42 25r43 28r42
+. 29r43 32r37 33r47 36r42 37r45 4|14r42 15r47 19r42 20r49 21r36 22r41 26r42
+. 27r43 31r42 32r43 36r37 37r47 41r42 42r45 5|20e31
+12I8*State<integer> 3|14r48 15r53 18r48 19r55 20r42 21r47 24r48 25r49 28r48
+. 29r49 32r43 33r53 36r48 37r51 4|14r48 15r53 19r48 20r55 21r42 22r47 26r48
+. 27r49 31r48 32r49 36r43 37r53 41r48 42r51
+

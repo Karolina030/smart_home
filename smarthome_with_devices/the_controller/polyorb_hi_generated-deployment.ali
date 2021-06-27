@@ -1,0 +1,100 @@
+V "GNAT Lib v9"
+A -O1
+A -gnatA
+A -g
+A -gnatwa
+A -gnatwG
+A -gnat12
+A -g
+A -gnata
+A -gnato
+A -gnatE
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RR NO_ALLOCATORS
+RR NO_DISPATCH
+RR NO_IO
+RR NO_RECURSION
+RR NO_UNCHECKED_ACCESS
+RR NO_UNCHECKED_DEALLOCATION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_OBSOLESCENT_FEATURES
+RV SPARK_05
+
+U polyorb_hi_generated.deployment%s  polyorb_hi_generated-deployment.ads  ebaaeda3 DE NE OO PR PK
+W polyorb_hi_generated%s  polyorb_hi_generated.ads  polyorb_hi_generated.ali
+Z system.unsigned_types%s  s-unstyp.ads		s-unstyp.ali
+
+D polyorb_hi_generated.ads  20170204221544 32a22d97 polyorb_hi_generated%s
+D polyorb_hi_generated-deployment.ads  20210626234509 d908c034 polyorb_hi_generated.deployment%s
+D system.ads		20200312110721 4635ec04 system%s
+D s-unstyp.ads		20200312110721 34867c83 system.unsigned_types%s
+D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/native.adc  20170204221544 00000000
+D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/gnat.adc  20170204221544 00000000
+X 1 polyorb_hi_generated.ads
+34K9*PolyORB_HI_Generated 38e25 2|10r9 252r12 300r5
+X 2 polyorb_hi_generated-deployment.ads
+10K30*Deployment 1|34k9 2|252r33 300l26 300e36
+16E8*Node_Type 17e22 21r7 27r7 37r4 37r20 37r39 55r22 95r9
+17n5*the_controller_K{16E8} 22r5 52r7 56r4 100r8 102r8 104r8 106r8 108r8
+. 110r8
+29i3*Max_Node_Image_Size{integer} 40r23
+36E11*UT_Deployment_The_Controller_Node_Type_Range{16E8} 47r11
+39I11*UT_Deployment_The_Controller_1_Max_Node_Image_Size{integer} 44r7
+42A11*UT_Deployment_The_Controller_Node_Image_Component{string}<integer>
+. 48r9
+46A8*UT_Deployment_The_Controller_Node_Image_Array(42A11)<16E8> 50r25 51r4
+50a3*Node_Image{46A8}
+55e3*My_Node{16E8}
+60E8*Entity_Type 66e37 70r7 86r7 91r4 91r22 91r43 210r9
+61n5*the_controller_the_thread_motion_K{60E8} 71r5 99r7 132r7 215r8 217r8
+62n5*the_controller_the_thread_control_K{60E8} 73r5 101r7 134r7 219r8 221r8
+. 223r8 225r8 227r8
+63n5*the_controller_the_thread_awake_K{60E8} 75r5 103r7 136r7 229r8 231r8
+64n5*the_controller_the_thread_awake_rules_K{60E8} 77r5 105r7 138r7 233r8
+. 235r8
+65n5*the_controller_the_thread_video_K{60E8} 79r5 107r7 140r7 237r8 239r8
+66n5*the_controller_the_thread_car_K{60E8} 81r5 109r7 142r7 241r8 243r8
+90E11*UT_Deployment_The_Controller_Entity_Type_Range{60E8} 94r11 127r11
+93A8*UT_Deployment_The_Controller_Entity_Table_Array(16E8)<60E8> 97r27 98r4
+97a3*Entity_Table{93A8}
+112i3*Max_Entity_Image_Size{integer} 120r23
+119I11*UT_Deployment_The_Controller_1_Max_Entity_Image_Size{integer} 124r7
+122A11*UT_Deployment_The_Controller_Entity_Image_Component{string}<integer>
+. 128r9
+126A8*UT_Deployment_The_Controller_Entity_Image_Array(122A11)<60E8> 130r27
+. 131r4
+130a3*Entity_Image{126A8}
+148E8*Port_Type 163e48 167r7 201r7 206r4 206r20 206r39
+149n5*the_controller_the_thread_motion_motion_in_K{148E8} 168r5 214r7 262r7
+150n5*the_controller_the_thread_motion_motion_out_K{148E8} 170r5 216r7 264r7
+151n5*the_controller_the_thread_control_video_not_recognized_K{148E8} 172r5
+. 218r7 266r7
+152n5*the_controller_the_thread_control_motion_in_K{148E8} 174r5 220r7 268r7
+153n5*the_controller_the_thread_control_gate_in_K{148E8} 176r5 222r7 270r7
+154n5*the_controller_the_thread_control_out_data_K{148E8} 178r5 224r7 272r7
+155n5*the_controller_the_thread_control_camera_out_K{148E8} 180r5 226r7 274r7
+156n5*the_controller_the_thread_awake_motion_in_K{148E8} 182r5 228r7 276r7
+157n5*the_controller_the_thread_awake_motion_out_K{148E8} 184r5 230r7 278r7
+158n5*the_controller_the_thread_awake_rules_motion_in_K{148E8} 186r5 232r7
+. 280r7
+159n5*the_controller_the_thread_awake_rules_coffee_out_K{148E8} 188r5 234r7
+. 282r7
+160n5*the_controller_the_thread_video_video_in_K{148E8} 190r5 236r7 284r7
+161n5*the_controller_the_thread_video_video_data_out_K{148E8} 192r5 238r7
+. 286r7
+162n5*the_controller_the_thread_car_motion_in_K{148E8} 194r5 240r7 288r7
+163n5*the_controller_the_thread_car_motion_out_K{148E8} 196r5 242r7 290r7
+205E11*UT_Deployment_The_Controller_Port_Type_Range{148E8} 209r11 257r11
+208A8*UT_Deployment_The_Controller_Port_Table_Array(60E8)<148E8> 212r25 213r4
+212a3*Port_Table{208A8}
+245i3*Max_Port_Image_Size{integer} 252r44
+250A11*Port_Sized_String{string}<integer> 258r9
+256A8*UT_Deployment_The_Controller_Port_Image_Array(250A11)<148E8> 260r25
+. 261r4
+260a3*Port_Image{256A8}
+295i3*Max_Payload_Size{integer}
+

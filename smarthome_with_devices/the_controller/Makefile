@@ -10,21 +10,28 @@
 #  Execution platform           : native
 #  Transport API                : TRANSPORT_NONE
 
-USER_OBJS =  home.o
+C_OBJECTS=
 
-MAINAPP = smarthome_with_devices
-BINARY = the_controller
-TARGET = native
-NEED_TRANSPORT = yes
-RUNTIME_PATH=$(shell echo "/opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-c" | sed 's/ /\\ /g')
-USER_SOURCES_DIRS= "-I/home/gjn/Desktop/ProjektNew"
+GNATMAKE = gnatmake
+GNAT = gnat
+CC = gcc
+TARGET = NATIVE
+BUILD = Debug
+CGCTRL = No
+PROJECT_FILE = the_controller.gpr
 ASN_SOURCES=
-include $(RUNTIME_PATH)/make/Makefile.common
+all:
+	ADA_PROJECT_PATH="/opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada:$$ADA_PROJECT_PATH" \
+	  $(GNATMAKE) -x -P$(PROJECT_FILE) -XTARGET=$(TARGET) -XBUILD=$(BUILD) -XCGCTRL=$(CGCTRL) ${USER_CFLAGS} -largs $(EXTERNAL_OBJECTS) ${C_OBJECTS} ${USER_LDFLAGS}
+
+generate-asn1-files: $(ASN_SOURCES)
+	 asn1.exe -Ada -uPER $(ASN_SOURCES)
 
 compile-c-files:
-	$(CC) -c $(INCLUDE) $(CFLAGS) -I'/home/gjn/Desktop/ProjektNew/' '/home/gjn/Desktop/ProjektNew/home.c' -o home.o
 
 compile-cpp-files:
 
 compile-ada-files:
 
+prove:
+	gnatprove -P$(PROJECT_FILE) -XTARGET=SPARK --warnings=continue --report=fail

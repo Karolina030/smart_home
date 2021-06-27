@@ -82,7 +82,7 @@ public
 		motion_in: in data port home_types::State;
 		gate_in: in data port home_types::State;
 		awake_in: in data port home_types::State;
-		camera_out: out data port home_types::State;
+		camera_out: out event port;
 		light_out: out data port home_types::State;
 		gate_out: out data port home_types::State;
 		coffee_out: out data port home_types::State;
@@ -106,17 +106,17 @@ public
 		awake_thread_conn: port awake_in -> the_thread_awake.motion_in;
 		awake_rules_conn: port the_thread_awake.motion_out -> the_thread_awake_rules.motion_in;
 		camera_control_conn: port the_thread_control.camera_out -> camera_out;
-		light_control_conn: port the_thread_control.light_out -> light_out;
-		recognized_conn: port the_thread_video.video_not_recognized -> the_thread_control.video_not_recognized;
+		light_control_conn: port the_thread_control.out_data -> light_out;
+		recognized_conn: port the_thread_video.video_data_out -> the_thread_control.video_not_recognized;
 		coffee_control_conn: port the_thread_awake_rules.coffee_out -> coffee_out;
-		heat_control_conn: port the_thread_control.heat_out -> heat_out;
-		music_control_conn: port the_thread_control.music_out -> music_out;
-		alarm_control_conn: port the_thread_control.alarm_out -> alarm_out;
+		heat_control_conn: port the_thread_control.out_data -> heat_out;
+		music_control_conn: port the_thread_control.out_data -> music_out;
+		alarm_control_conn: port the_thread_control.out_data -> alarm_out;
 		video_conn: port video_from_camera -> the_thread_video.video_in;
-		video_transfer: port the_thread_video.video_out -> video_out;
+		video_transfer: port the_thread_video.video_data_out -> video_out;
 
 		--video_control_conn: port the_thread_video.video_out -> the_thread_control.video_not_recognized;
-		gate_control_conn: port the_thread_control.gate_out -> gate_out;
+		gate_control_conn: port the_thread_control.out_data -> gate_out;
 		car_thread_conn: port gate_in -> the_thread_car.motion_in;
 		gate_thread_conn: port the_thread_car.motion_out -> the_thread_control.gate_in;
 
@@ -148,9 +148,11 @@ public
 			movement_data: in parameter home_types::State;
 			person_in_room: out parameter home_types::State;
 		properties
-			source_language => (C);
-			source_name => "readMotion";
-			source_text => ("home.c");
+--			source_language => (C);
+--			source_name => "readMotion";
+--			source_text => ("home.c");
+			Source_Language => (Ada95);
+			Source_Name => "Home.ReadMotion";
 	END Motion_Processing;
 	
 	
@@ -181,9 +183,11 @@ public
 			movement_data: in parameter home_types::State;
 			car_detected: out parameter home_types::State;
 		properties
-			source_language => (C);
-			source_name => "carCheck";
-			source_text => ("home.c");
+--			source_language => (C);
+--			source_name => "carCheck";
+--			source_text => ("home.c");
+			Source_Language => (Ada95);
+			Source_Name => "Home.CarCheck";
 	END Car_Processing;
 	
 	thread AwakeMotion
@@ -212,9 +216,11 @@ public
 			movement_data: in parameter home_types::State;
 			motion_out: out parameter home_types::State;
 		properties
-			source_language => (C);
-			source_name => "awakeMotion";
-			source_text => ("home.c");
+--			source_language => (C);
+--			source_name => "awakeMotion";
+--			source_text => ("home.c");
+			Source_Language => (Ada95);
+			Source_Name => "Home.AwakeMotion";
 	END Awake_Processing;
 	
 	
@@ -222,13 +228,16 @@ public
 		features
 			video_not_recognized: in data port home_types::State;
 			motion_in: in data port home_types::State;
-			camera_out: out data port home_types::State;
-			light_out: out data port home_types::State;
-			heat_out: out data port home_types::State;
-			music_out: out data port home_types::State;
-			alarm_out: out data port home_types::State;
 			gate_in: in data port home_types::State;
-			gate_out: out data port home_types::State;
+			out_data: out data port home_types::State;
+		
+			
+			camera_out: out event port;
+--			light_out: out data port home_types::State;
+--			heat_out: out data port home_types::State;
+--			music_out: out data port home_types::State;
+--			alarm_out: out data port home_types::State;
+--			gate_out: out data port home_types::State;
 	end ControlRules;
 	
 	thread implementation ControlRules.impl
@@ -240,12 +249,14 @@ public
 			c0: parameter motion_in -> Q.movement_data;
 			c1: parameter video_not_recognized -> Q.video_not_recognized;
 			c2: parameter gate_in -> Q.gate_in;
-			c3: parameter Q.camera_out -> camera_out;
-			c4: parameter Q.light_out -> light_out;
-			c5: parameter Q.heat_out -> heat_out;
-			c6: parameter Q.music_out -> music_out;
-			c7: parameter Q.alarm_out -> alarm_out;
-			c8: parameter Q.gate_out -> gate_out;
+--			c3: parameter Q.camera_out -> camera_out;
+			c4: parameter Q.out_data -> out_data;
+
+--			c4: parameter Q.light_out -> light_out;
+--			c5: parameter Q.heat_out -> heat_out;
+--			c6: parameter Q.music_out -> music_out;
+--			c7: parameter Q.alarm_out -> alarm_out;
+--			c8: parameter Q.gate_out -> gate_out;
 
 		PROPERTIES
 		  Dispatch_Protocol => Periodic;
@@ -257,18 +268,22 @@ public
 		FEATURES
 			movement_data: in parameter home_types::State;
 			video_not_recognized: in parameter home_types::State;
-			camera_out: out parameter home_types::State;
-			light_out: out parameter home_types::State;
-			heat_out: out parameter home_types::State;
-			music_out: out parameter home_types::State;
-			alarm_out: out parameter home_types::State;
 			gate_in: in parameter home_types::State;
-			gate_out: out parameter home_types::State;
+			out_data: out parameter home_types::State;
+	--		camera_out: out parameter home_types::State;
+	
+--			light_out: out parameter home_types::State;
+--			heat_out: out parameter home_types::State;
+--			music_out: out parameter home_types::State;
+--			alarm_out: out parameter home_types::State;
+--			gate_out: out parameter home_types::State;
 			
 		properties
-			source_language => (C);
-			source_name => "controlRules"; 
-			source_text => ("home.c");
+--			source_language => (C);
+--			source_name => "controlRules"; 
+--			source_text => ("home.c");
+			Source_Language => (Ada95);
+			Source_Name => "Home.ControlRules";
 	END Control_Processing;
 	
 		
@@ -299,16 +314,20 @@ public
 			movement_data: in parameter home_types::State;
 			coffee_out: out parameter home_types::State;
 		properties
-			source_language => (C);
-			source_name => "awake_Proccessing_Rules"; -- zmienić funkcję
-			source_text => ("home.c");
+--			source_language => (C);
+--			source_name => "awake_Proccessing_Rules"; -- zmienić funkcję
+--			source_text => ("home.c");
+			
+			Source_Language => (Ada95);
+			Source_Name => "Home.Awake_Processing_Rules";
 	END Awake_Processing_Rules;
 	
 	thread ProcessVideo
 		features
 			video_in: in data port home_types::State;	
-			video_out: out data port home_types::State;
-			video_not_recognized: out data port home_types::State;		
+--			video_out: out data port home_types::State;
+--			video_not_recognized: out data port home_types::State;		
+			video_data_out: out data port home_types::State;	
 		
 	end ProcessVideo;
 	
@@ -319,8 +338,8 @@ public
 			};
 		connections
 			c0: parameter video_in -> Q.video_in;
-			c1: parameter Q.video_out -> video_out;
-			c2: parameter Q.video_not_recognized -> video_not_recognized;
+			c1: parameter Q.video_data_out -> video_data_out;
+--			c2: parameter Q.video_not_recognized -> video_not_recognized;
 			
 		PROPERTIES
 		  Dispatch_Protocol => Periodic;
@@ -332,13 +351,15 @@ public
 	SUBPROGRAM Video_Processing
 		FEATURES
 			video_in: in parameter home_types::State;
-			video_out: out parameter home_types::State;
-			video_not_recognized: out parameter home_types::State;
+			video_data_out: out parameter home_types::State;
+	--		video_not_recognized: out parameter home_types::State;
 			
 		properties
-			source_language => (C);
-			source_name => "processVideo"; -- zmienić funkcję
-			source_text => ("home.c");
+--			source_language => (C);
+--			source_name => "processVideo"; -- zmienić funkcję
+--			source_text => ("home.c");
+			Source_Language => (Ada95);
+			Source_Name => "Home.ProcessVideo";
 	END Video_Processing;
 	
 	processor MainProcessor	
@@ -408,7 +429,7 @@ public
 	
 	device Camera
 		features
-			camera_on_off: in data port home_types::State;
+			camera_on_off: in event port;
 			video_stream: out data port home_types::State;
 			bus_access: requires bus access HWConnection.impl;
 			
